@@ -79,4 +79,85 @@
   text-align: center;
   padding: 10px;
   background: #eee;
+} 
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #66bb2f;
+  padding: 15px 20px;
+  color: white;
+  font-weight: bold;
 }
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(#66bb2f, #cde77f);
+  color: white;
+}
+
+.hero-img {
+  font-size: 50px;
+}
+
+/* SEARCH */
+.search-box {
+  margin: 15px;
+  background: #f5f5f5;
+  border-radius: 25px;
+  padding: 10px 15px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  width: 90%;
+  outline: none;
+}
+
+/* HIGHLIGHT */
+.highlight {
+  margin: 20px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.highlight img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.highlight p {
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* MENU GRID UPDATE */
+.menu-grid .menu {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* TRENDING */
+.trending {
+  background: #e0e0e0;
+  padding: 15px;
+  border-radius: 20px 20px 0 0;
+}
+
+.trend-card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
