@@ -1,37 +1,82 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background-color: #f5f7fa;
 }
 
-.header {
-  background-color: #1e3a8a;
+/* LOGIN */
+.login-page {
+  height: 100vh;
+  background: linear-gradient(#cde77f, #f9f871);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: #4caf50;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  border-radius: 12px;
   color: white;
-  padding: 16px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn {
+  display: block;
+  background: orange;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* DASHBOARD */
+.topbar {
+  background: #4caf50;
+  padding: 15px;
+  color: white;
   text-align: center;
 }
 
-.dashboard {
-  padding: 30px;
+.welcome {
+  padding: 20px;
+  background: #eaf7c0;
+  text-align: center;
 }
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
 }
 
-.menu-grid a {
-  background-color: #f97316;
+.menu {
+  background: #6fbf73;
   color: white;
-  text-decoration: none;
   padding: 20px;
   text-align: center;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.menu-grid a:hover {
-  background-color: #ea580c;
+.menu:hover {
+  background: #5aa864;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background: #eee;
 }
