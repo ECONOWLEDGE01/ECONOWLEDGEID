@@ -1,51 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>EcoNowledge | Dashboard</title>
-  <link rel="stylesheet" href="style-base.css">
-  <link rel="stylesheet" href="style-ui.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Econowledge</title>
+    <link rel="stylesheet" href="style-base.css">
+    <link rel="stylesheet" href="style-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-gradient-main dashboard-mode">
 
-<header class="topbar">
-  <div class="logo">EcoNowledge</div>
-  <div class="menu-btn">☰</div>
-</header>
+    <div class="watermark-gunungan"></div>
+    <div class="cloud-decor cloud-left"></div>
+    <div class="cloud-decor cloud-right"></div>
 
-<section class="hero">
-  <div class="hero-text">
-    <h2>Halo! Eno People</h2>
-    <p>Economy Meets Knowledge: Empowering Your Financial Future</p>
-  </div>
-  <div class="hero-img">🎭</div>
-</section>
+    <header class="dash-header">
+        <div class="header-top-row">
+            <img src="assets/images/logo.png" alt="Logo" class="header-logo">
+            <i class="fas fa-bars burger-icon"></i>
+        </div>
 
-<section class="search-box">
-  🔍 <input type="text" placeholder="Cari materi keuangan..." />
-</section>
+        <div class="user-greeting-area">
+            <div class="avatar-circle">
+                <img src="assets/images/avatar.png" alt="User">
+            </div>
+            <div class="greeting-text">
+                <h1>Halo! Eno People</h1>
+                <p>Economy Meets Knowledge: Empowering Your Financial Future with Econowledge!</p>
+            </div>
+            <img src="assets/images/wayang-header.png" class="wayang-decor" alt="Wayang">
+        </div>
+    </header>
 
-<section class="highlight">
-  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" alt="finance">
-  <p>Strategi Keuangan Cerdas: Panduan Finansial Sesuai Usia untuk Masa Depan Aman</p>
-</section>
+    <div class="search-wrapper">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder=""> </div>
+    </div>
 
-<section class="menu-grid">
-  <div class="menu">📘<br>Econo Read</div>
-  <div class="menu">🎥<br>Econo Vision</div>
-  <div class="menu">🎧<br>Econo Listen</div>
-  <div class="menu">💬<br>Econo Forum</div>
-  <div class="menu">🚨<br>Econo Alert</div>
-  <div class="menu">📊<br>Econo Insights</div>
-</section>
+    <main class="main-content">
+        
+        <div class="banner-wrapper">
+            <div class="batik-frame-banner">
+                <div class="video-thumbnail">
+                    <img src="assets/images/money-thumb.jpg" alt="Finance">
+                    <div class="play-icon-overlay">
+                        <i class="fas fa-pause"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="banner-caption">Strategi Keuangan Cerdas: Panduan Finansial Sesuai Usia Untuk Masa Depan yang Aman</p>
+        </div>
 
-<section class="trending">
-  <h3>TRENDING 📈</h3>
-  <div class="trend-card">
-    <p>IHSG Awal Maret Menguat</p>
-    <small>0:12 / 1:05</small>
-  </div>
-</section>
+        <div class="menu-grid-container">
+            <div class="menu-item">
+                <div class="icon-box"><i class="fas fa-book-open"></i></div>
+                <span>ECONO READ</span>
+            </div>
+            <div class="menu-item">
+                <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                <span>ECONO VISION</span>
+            </div>
+            <div class="menu-item">
+                <div class="icon-box"><i class="fas fa-microphone"></i></div>
+                <span>ECONO LISTEN</span>
+            </div>
+            <div class="menu-item">
+                <div class="icon-box"><i class="fas fa-users"></i></div>
+                <span>ECONO FORUM</span>
+            </div>
+            <div class="menu-item">
+                <div class="icon-box icon-alert"><img src="assets/images/lamp-icon.png" alt="Alert" style="width:25px;"></div>
+                <span>ECONO ALERT</span>
+            </div>
+            <div class="menu-item">
+                <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                <span>ECONO INSIGHTS</span>
+            </div>
+        </div>
+
+        <div class="trending-container">
+            <div class="trending-title">
+                <h3>TRENDING</h3>
+                <i class="fas fa-chart-area" style="color:#4CAF50;"></i>
+            </div>
+            
+            <div class="news-snippet">
+                <div class="chart-img">
+                    <img src="assets/images/chart-small.jpg" alt="Chart">
+                    <div class="overlay-pause"><i class="fas fa-pause"></i></div>
+                </div>
+                <div class="news-text">
+                    <p>IHSG Awal Maret Menguat, Saham BBRI, BBCA, BMRI hingga UNVR Diborong...</p>
+                </div>
+            </div>
+
+            <div class="audio-player-bar">
+                <div class="progress-track"><div class="progress-fill"></div></div>
+                <div class="time-info">0:12 / 1:05</div>
+                <i class="fas fa-expand-alt expand-icon"></i>
+            </div>
+        </div>
+    </main>
+
+    <div class="bottom-nav">
+        <i class="fas fa-home nav-active"></i>
+        <i class="fas fa-history"></i>
+        <i class="far fa-user"></i>
+    </div>
 
 </body>
 </html>
