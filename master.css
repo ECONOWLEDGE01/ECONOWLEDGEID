@@ -1,0 +1,263 @@
+/* ECONOWLEDGE MASTER STYLESHEET 
+   Combining Base Structure & High-Fidelity UI 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+    /* Color Palette Presisi */
+    --primary-green: #64DD17;
+    --dark-green: #33691E;
+    --header-green: #558B2F;
+    --accent-yellow: #FFF59D;
+    --cta-orange: linear-gradient(180deg, #FFA726 0%, #F57C00 100%);
+    --bg-main: linear-gradient(180deg, #FDD835 0%, #AED581 50%, #7CB342 100%);
+    --shadow-heavy: 4px 4px 0px #1a1a1a;
+    --border-bold: 2.5px solid #1a1a1a;
+}
+
+/* --- BASE & VIEWPORT CONTROL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-main);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Mengunci tampilan agar Mobile-First & Centered di Desktop */
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1); /* Bayangan container di desktop */
+}
+
+/* --- DECORATIVE LAYERS --- */
+.ui-bg-elements {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gunungan-watermark {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    opacity: 0.12;
+}
+
+.mega-mendung {
+    position: absolute;
+    width: 120px;
+    opacity: 0.7;
+}
+.cloud-left { top: 25%; left: -20px; }
+.cloud-right { top: 20%; right: -20px; transform: scaleX(-1); }
+
+/* --- LOGIN UI DETAILS --- */
+.login-batik-frame {
+    background: url('assets/images/pattern-batik.png') repeat; /* WAJIB ADA */
+    background-size: 100px;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 20px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.login-card-inner {
+    background: var(--primary-green);
+    border-radius: 20px;
+    padding: 40px 25px;
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.ui-title-bold {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.ui-input-field {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.ui-input-field::placeholder { color: #CE93D8; }
+
+.ui-btn-signup {
+    width: 100%;
+    padding: 16px;
+    background: var(--cta-orange);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+    box-shadow: 0 5px 0px #BF360C;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.ui-btn-signup:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0px #BF360C;
+}
+
+/* --- DASHBOARD UI DETAILS --- */
+.header-modern {
+    background: var(--header-green);
+    padding: 25px;
+    border-radius: 0 0 35px 35px;
+    position: relative;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.user-banner {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.avatar-frame {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 2.5px solid white;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.wayang-hero {
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    height: 150px;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
+}
+
+/* Search Bar Neo-Brutalism */
+.search-container-mod {
+    padding: 0 25px;
+    margin-top: -25px;
+    z-index: 10;
+}
+
+.search-neo {
+    background: var(--accent-yellow);
+    border: var(--border-bold);
+    box-shadow: var(--shadow-heavy);
+    border-radius: 50px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-neo input {
+    flex: 1; border: none; background: transparent;
+    padding-left: 10px; font-weight: 700; outline: none;
+}
+
+/* Menu Grid Icons */
+.menu-grid-mod {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 25px;
+}
+
+.menu-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-box-mod {
+    width: 70px; height: 70px;
+    background: #C5E1A5;
+    border: 2.5px solid var(--dark-green);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 0px var(--dark-green);
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.icon-box-mod img { width: 40px; }
+
+.icon-box-mod:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0px var(--dark-green);
+}
+
+.node-text {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--dark-green);
+}
+
+/* Trending Panel */
+.trending-panel-mod {
+    background: linear-gradient(180deg, #E0E0E0 0%, #9E9E9E 100%);
+    margin: 0 25px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1.5px solid #757575;
+}
+
+.news-row {
+    display: flex;
+    gap: 15px;
+    background: rgba(255,255,255,0.3);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.news-row img {
+    width: 80px; border-radius: 8px;
+}
+
+/* Bottom Nav Floating */
+.bottom-nav-mod {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    height: 65px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.nav-item { color: rgba(255,255,255,0.6); font-size: 24px; }
+.nav-item.active { color: white; filter: drop-shadow(0 0 10px white); }
