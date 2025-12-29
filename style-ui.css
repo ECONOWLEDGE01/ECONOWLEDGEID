@@ -1,267 +1,181 @@
-/* --- GLOBAL VARIABLES & FONTS --- */
+/* --- UI VARIABLES --- */
 :root {
-    --lime-dark: #827717;
-    --lime-light: #DCE775;
-    --green-header: #64DD17; /* Hijau cerah header */
-    --green-deep: #1B5E20;
-    --orange-cta: linear-gradient(90deg, #FFA726, #EF6C00);
-    --bg-gradient: linear-gradient(180deg, #FFF176 0%, #AED581 60%, #8BC34A 100%);
+    --primary-green: #64DD17;    /* Hijau neon khas desain */
+    --header-green: #558B2F;     /* Hijau dashboard */
+    --accent-yellow: #FFF176;    /* Kuning search bar */
+    --deep-text: #1B5E20;        /* Teks hijau tua */
+    --cta-orange: linear-gradient(180deg, #FFA726 0%, #F57C00 100%);
+    --main-bg: linear-gradient(180deg, #FDD835 0%, #AED581 50%, #7CB342 100%);
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-}
-
-.bg-gradient-main {
-    background: var(--bg-gradient);
+/* --- GLOBAL UI --- */
+body.body-login, body.body-dashboard {
+    background: var(--main-bg);
     background-attachment: fixed;
 }
 
-/* --- LOGIN UI DETAILS --- */
+/* --- LOGIN UI SPECIFICS --- */
+.batik-outer-frame {
+    background: url('assets/images/pattern-batik.png'); /* Pattern batik berulang */
+    background-size: 150px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
 
-/* Logo */
-.main-logo { width: 150px; }
+/* Dekorasi Ranting */
+.branch-top-left {
+    position: absolute; top: -10px; left: -10px;
+    width: 80px; height: 80px;
+    background: url('assets/images/branch-left.png') no-repeat;
+    background-size: contain; z-index: 5;
+}
+.branch-bottom-right {
+    position: absolute; bottom: -10px; right: -10px;
+    width: 80px; height: 80px;
+    background: url('assets/images/branch-right.png') no-repeat;
+    background-size: contain; z-index: 5;
+    transform: rotate(10deg);
+}
 
-/* Batik Frame: Gunakan gambar batik kamu disini */
-.batik-wrapper {
-    background-image: url('assets/images/batik-pattern-green.jpg'); 
-    background-size: cover;
+.login-inner-card {
+    background-color: var(--primary-green);
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 100%);
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* Dekorasi Ranting Hitam */
-.decor-branch-left, .decor-branch-right {
-    position: absolute;
-    width: 60px; height: 60px;
-    background-image: url('assets/images/branch-silhouette.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-}
-.decor-branch-left { top: -5px; left: -5px; transform: rotate(0deg); }
-.decor-branch-right { bottom: -5px; right: -5px; transform: rotate(180deg); }
-
-/* Kartu Dalam */
-.login-card {
-    background: #64DD17; /* Hijau solid cerah */
-    /* Opsional: Tambahkan tekstur pattern overlay */
-    background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
-    background-size: 10px 10px;
-    
-    border-radius: 15px;
+.ui-title {
     color: white;
-    border: 1px solid #7CB342;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-.text-title {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.ui-input {
+    border-radius: 8px;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.input-field {
-    background: #fff;
-    border: none;
-    border-radius: 5px;
-    color: #333;
-    font-weight: 600;
+.ui-input::placeholder {
+    color: #CE93D8; /* Warna ungu sesuai desain */
 }
-.input-field::placeholder { color: #CE93D8; /* Ungu pudar */ font-weight: 500; }
 
-.checkbox-label {
+.ui-btn-primary {
+    background: var(--cta-orange);
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 0px #E65100; /* Efek 3D tombol */
+    transition: all 0.1s;
+}
+
+.ui-btn-primary:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0px #E65100;
+}
+
+.ui-divider span {
+    background: var(--primary-green);
+    padding: 0 15px;
+    color: white;
     font-size: 12px;
     font-weight: 600;
-    display: flex; gap: 8px; align-items: center;
-}
-.small span { font-size: 10px; line-height: 1.2; }
-.small a { color: #333; font-weight: 800; text-decoration: underline; }
-
-.btn-submit {
-    background: var(--orange-cta);
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    margin-bottom: 15px;
-    transition: 0.2s;
-}
-.btn-submit:hover { transform: translateY(-2px); }
-
-.divider-text {
-    font-size: 11px; font-weight: 700; text-align: center;
-    position: relative; margin: 10px 0;
-}
-.divider-text::before, .divider-text::after {
-    content: ''; position: absolute; top: 50%;
-    width: 30%; height: 1px; background: rgba(255,255,255,0.5);
-}
-.divider-text::before { left: 0; }
-.divider-text::after { right: 0; }
-
-.soc-btn {
-    background: white; border-radius: 50%;
-    font-size: 18px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 2;
+    position: relative;
 }
 
-/* --- DASHBOARD UI DETAILS --- */
-
-/* Background Elements */
-.watermark-gunungan {
-    position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; height: 60%;
-    background: url('assets/images/gunungan-outline.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.1; z-index: -1;
+.ui-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 0; width: 100%; height: 1px;
+    background: rgba(255,255,255,0.4);
 }
 
-.cloud-decor {
-    position: absolute; width: 100px; height: 50px;
-    background: url('assets/images/mega-mendung.png') no-repeat center;
-    background-size: contain; opacity: 0.8;
-}
-.cloud-left { top: 35%; left: 0; }
-.cloud-right { top: 30%; right: 0; transform: scaleX(-1); }
-
-/* Header Style */
-.dash-header {
-    background-color: var(--green-header);
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    color: white;
-}
-
-.header-logo { height: 35px; }
-.burger-icon { font-size: 24px; color: white; cursor: pointer; }
-
-.avatar-circle {
+.btn-social {
     width: 50px; height: 50px;
-    border-radius: 50%; overflow: hidden;
-    border: 2px solid #fff;
-    background: #eee;
-}
-.avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
-
-.greeting-text h1 { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
-.greeting-text p { font-size: 10px; font-style: italic; opacity: 0.9; line-height: 1.3; }
-
-/* Search Bar Kuning */
-.search-box {
-    background: #FFF59D; /* Kuning pucat */
-    border: 2px solid #212121; /* Garis hitam tegas */
-    border-radius: 30px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    font-size: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.search-box i { font-size: 16px; color: #333; margin-left: 5px; }
-.search-box input { color: #333; font-weight: 600; }
 
-/* Banner / Video Frame */
-.batik-frame-banner {
-    padding: 6px;
-    background: url('assets/images/batik-pattern-green.jpg'); /* Reuse batik */
-    background-size: cover;
-    border-radius: 12px;
-}
-.video-thumbnail {
-    position: relative;
-    border-radius: 8px; overflow: hidden;
-    background: #000;
-}
-.video-thumbnail img { width: 100%; display: block; opacity: 0.8; }
-.play-icon-overlay {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; font-size: 24px;
-    border: 2px solid white; border-radius: 50%;
-    width: 40px; height: 40px;
-    display: flex; align-items: center; justify-content: center;
+/* --- DASHBOARD UI SPECIFICS --- */
+.ui-watermark-gunungan {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 80%; height: 60%;
+    background: url('assets/images/gunungan-outline.png') center no-repeat;
+    background-size: contain;
+    opacity: 0.12; z-index: -1;
 }
 
-.banner-caption {
-    font-size: 11px; font-weight: 700;
-    text-align: center; color: var(--green-deep);
-    margin-top: 8px;
-    background: rgba(255,255,255,0.3);
-    padding: 5px; border-radius: 5px;
+.ui-header-nav {
+    background-color: var(--header-green);
+    border-radius: 0 0 35px 35px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    color: white;
 }
 
-/* Menu Grid */
-.icon-box {
+.avatar-wrapper img {
+    width: 100%; height: 100%; border-radius: 50%;
+    border: 2px solid white; object-fit: cover;
+}
+
+.welcome-msg h2 { font-size: 20px; font-weight: 700; }
+.welcome-msg p { font-size: 10px; font-style: italic; opacity: 0.9; line-height: 1.2; }
+
+.wayang-img {
+    position: absolute; right: -15px; bottom: -20px;
+    height: 140px; z-index: 1;
+}
+
+/* Search Bar Kuning Tegas */
+.search-bar-ui {
+    background: var(--accent-yellow);
+    border: 2px solid #212121;
+    border-radius: 25px;
+    box-shadow: 4px 4px 0px #000; /* Efek desain neo-brutalism halus */
+}
+
+/* Menu Icons - Boxy Rounded */
+.node-icon {
     background: #C5E1A5;
-    border: 2px solid #558B2F;
-    border-radius: 16px; /* Rounded box */
-    color: #558B2F; font-size: 24px;
-    box-shadow: inset 0 2px 5px rgba(255,255,255,0.6), 0 3px 6px rgba(0,0,0,0.15);
-    transition: transform 0.2s;
-}
-.icon-box:hover { transform: scale(1.05); background: #AED581; }
-
-.menu-item span {
-    font-size: 9px; font-weight: 800;
-    color: var(--green-deep);
-    margin-top: 6px; letter-spacing: 0.5px;
-}
-.icon-alert { /* Style khusus untuk icon alert jika beda */ }
-
-/* Trending Section (Gradient Gray) */
-.trending-container {
-    background: linear-gradient(to bottom, #EEEEEE, #BDBDBD);
-    border-radius: 15px;
-    border: 1px solid #9E9E9E;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
-.trending-title {
-    display: flex; gap: 8px; align-items: center;
-    font-size: 14px; font-weight: 800; color: #3E2723;
-    margin-bottom: 10px;
+    border: 2.5px solid #33691E;
+    border-radius: 18px;
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1);
 }
 
-.news-snippet {
-    background: rgba(255,255,255,0.4);
-    padding: 8px; border-radius: 8px;
-}
-.chart-img {
-    width: 80px; height: 50px;
-    border-radius: 5px; overflow: hidden; position: relative;
-}
-.chart-img img { width: 100%; height: 100%; object-fit: cover; }
-.overlay-pause {
-    position: absolute; bottom: 5px; left: 5px;
-    color: white; font-size: 12px;
+.node-icon img { width: 35px; height: 35px; }
+
+.node-label {
+    margin-top: 8px; font-size: 10px; font-weight: 800;
+    color: var(--deep-text);
 }
 
-.news-text p {
-    font-size: 9px; font-weight: 600; color: #212121;
-    line-height: 1.3;
+.alert-active { background: #FFEB3B !important; border-color: #F57F17 !important; }
+
+/* Trending Section Gray Gradient */
+.trending-panel {
+    background: linear-gradient(180deg, #E0E0E0 0%, #9E9E9E 100%);
+    border-radius: 20px;
+    border: 1px solid #757575;
 }
 
-/* Audio Player Controls */
-.audio-player-bar {
-    margin-top: 8px;
-    color: #fff; font-size: 11px; font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+.badge-trending {
+    font-weight: 800; font-size: 14px; color: #212121;
 }
-.progress-track {
-    flex: 1; height: 4px; background: rgba(255,255,255,0.5);
-    margin-right: 10px; border-radius: 2px;
-}
-.progress-fill { width: 20%; height: 100%; background: #fff; border-radius: 2px; }
-.expand-icon { margin-left: 10px; cursor: pointer; }
 
-/* Bottom Nav */
-.bottom-nav {
-    background: transparent; /* Transparan agar menyatu dengan background body bawah */
-    /* Jika perlu background semi transparan: background: rgba(0,0,0,0.2); */
+/* Bottom Nav Glassmorphism */
+.bottom-dock {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
-.bottom-nav i {
-    font-size: 22px; color: rgba(255,255,255,0.6);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    cursor: pointer;
-}
-.bottom-nav .nav-active { color: #fff; transform: scale(1.2); }
+
+.dock-link i { font-size: 24px; color: rgba(255,255,255,0.6); }
+.dock-link.active i { color: white; filter: drop-shadow(0 0 8px white); }
