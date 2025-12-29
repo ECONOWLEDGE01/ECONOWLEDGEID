@@ -179,3 +179,61 @@ body.body-login, body.body-dashboard {
 
 .dock-link i { font-size: 24px; color: rgba(255,255,255,0.6); }
 .dock-link.active i { color: white; filter: drop-shadow(0 0 8px white); }
+
+/* 1. Kunci Lebar Layar agar seperti HP */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: transparent;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* 2. Detail Frame Batik (LOGIN & BANNER) */
+.batik-border {
+    padding: 12px;
+    background: url('pattern-batik.png') repeat;
+    background-size: 80px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* 3. Detail Search Bar (Sangat Penting) */
+.search-bar-styled {
+    background: #FFF59D; /* Kuning cerah sesuai desain */
+    border: 3px solid #1a1a1a; /* Garis tegas */
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    box-shadow: 5px 5px 0px #1a1a1a; /* Shadow tegas/Neo-brutalism */
+}
+
+/* 4. Ikon Grid (Rounded Box Detail) */
+.menu-node-icon {
+    width: 65px;
+    height: 65px;
+    background: #C5E1A5;
+    border: 2px solid #33691E;
+    border-radius: 18px; /* Bukan lingkaran sempurna, tapi rounded box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 0px #33691E; /* Efek tombol 3D */
+    transition: all 0.2s ease;
+}
+
+.menu-node-icon:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0px #33691E;
+}
+
+/* 5. Wayang Overlap */
+.wayang-absolute {
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    height: 150px;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
+    z-index: 10;
+}
