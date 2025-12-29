@@ -3,55 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Login | Econowledge Prototype</title>
-    
-    <link rel="stylesheet" href="style-base.css">
-    <link rel="stylesheet" href="style-ui.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Login | Econowledge</title>
+    <link rel="stylesheet" href="style-master.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="body-login">
+<body>
 
-    <div class="main-viewport">
-        
+    <div class="app-container">
         <header class="login-brand">
-            <img src="assets/images/logo-econowledge.png" alt="Logo Econowledge" class="img-logo">
+            <img src="assets/images/logo.png" alt="Logo" class="img-logo">
         </header>
 
         <section class="login-section">
-            <div class="batik-outer-frame">
-                
-                <div class="decor-element branch-top-left"></div>
-                <div class="decor-element branch-bottom-right"></div>
+            <div class="login-batik-frame">
+                <div class="branch-top-left"></div>
+                <div class="branch-bottom-right"></div>
 
-                <div class="login-inner-card">
-                    <h1 class="ui-title">Selamat Datang</h1>
+                <div class="login-card-inner">
+                    <h1 class="ui-title-bold">Selamat Datang</h1>
                     
-                    <form action="dashboard.html" class="login-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="Email address" class="ui-input" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" placeholder="Enter password" class="ui-input" required>
-                        </div>
+                    <form action="dashboard.html">
+                        <input type="email" placeholder="Email address" class="ui-input-field" required>
+                        <input type="password" placeholder="Enter password" class="ui-input-field" required>
                         
                         <div class="form-utils">
-                            <label class="ui-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                                Remember me
+                            <label class="checkbox-container">
+                                <input type="checkbox"> Remember me
                             </label>
                         </div>
 
-                        <button type="submit" class="ui-btn-primary">Sign up</button>
+                        <button type="submit" class="ui-btn-signup">Sign up</button>
 
                         <div class="agreement-box">
-                            <label class="ui-checkbox-small">
-                                <input type="checkbox" required>
-                                <span class="checkmark-small"></span>
-                                <span>I agree to the platform's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
-                            </label>
+                            <p class="small-text">
+                                <input type="checkbox" required> 
+                                I agree to the platform's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                            </p>
                         </div>
 
                         <div class="ui-divider">
@@ -59,9 +46,9 @@
                         </div>
 
                         <div class="social-flex">
-                            <button type="button" class="btn-social fb"><i class="fab fa-facebook-f"></i></button>
-                            <button type="button" class="btn-social google"><img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="G"></button>
-                            <button type="button" class="btn-social apple"><i class="fab fa-apple"></i></button>
+                            <button type="button" class="btn-social"><i class="fab fa-facebook-f" style="color:#1877F2"></i></button>
+                            <button type="button" class="btn-social"><img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" width="20"></button>
+                            <button type="button" class="btn-social"><i class="fab fa-apple"></i></button>
                         </div>
                     </form>
                 </div>
