@@ -1,82 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Econowledge Dashboard</title>
-    <link rel="stylesheet" href="style-master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dashboard | Econowledge</title>
+    
+    <link rel="stylesheet" href="style-base.css">
+    <link rel="stylesheet" href="style-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="app-container">
-        <div class="ui-bg-elements">
-            <img src="https://econowledge01.github.io/ECONOWLEDGEID/assets/images/gunungan.png" class="gunungan-watermark">
-        </div>
+    <div class="ui-bg-elements">
+        <img src="assets/images/gunungan.png" class="gunungan-watermark" alt="">
+    </div>
 
+    <div class="app-container">
+        
         <header class="header-modern">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <img src="logo.png" height="30">
-                <i class="fas fa-bars" style="font-size: 24px;"></i>
+            <div class="nav-top">
+                <img src="assets/images/logo-white.png" height="30" alt="Logo">
+                <i class="fas fa-bars"></i>
             </div>
+
             <div class="user-banner">
                 <div class="avatar-frame">
-                    <img src="user.jpg" width="100%">
+                    <img src="assets/images/user.jpg" alt="Profile">
                 </div>
-                <div style="flex: 1;">
-                    <h2 style="font-size: 20px; font-weight: 800;">Halo! Eno People</h2>
-                    <p style="font-size: 10px; font-style: italic; opacity: 0.9;">Economy Meets Knowledge: Empowering Your Financial Future!</p>
+                <div class="welcome-msg">
+                    <h2>Halo! Eno People</h2>
+                    <p>Economy Meets Knowledge: Empowering Your Financial Future!</p>
                 </div>
-                <img src="https://econowledge01.github.io/ECONOWLEDGEID/assets/images/wayang.png" class="wayang-hero">
+                
+                <img src="assets/images/wayang.png" class="wayang-hero" alt="Wayang">
             </div>
         </header>
 
-        <div class="search-neo">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="">
-        </div>
-
-        <div class="menu-grid-mod">
-            <div class="menu-node">
-                <div class="icon-box-mod"><i class="fas fa-book-open"></i></div>
-                <span class="node-text">ECONO READ</span>
-            </div>
-            <div class="menu-node">
-                <div class="icon-box-mod"><i class="fas fa-laptop"></i></div>
-                <span class="node-text">ECONO VISION</span>
-            </div>
-            <div class="menu-node">
-                <div class="icon-box-mod"><i class="fas fa-microphone"></i></div>
-                <span class="node-text">ECONO LISTEN</span>
-            </div>
-            <div class="menu-node">
-                <div class="icon-box-mod"><i class="fas fa-users"></i></div>
-                <span class="node-text">ECONO FORUM</span>
-            </div>
-            <div class="menu-node">
-                <div class="icon-box-mod alert-active"><i class="fas fa-lightbulb"></i></div>
-                <span class="node-text">ECONO ALERT</span>
-            </div>
-            <div class="menu-node">
-                <div class="icon-box-mod"><i class="fas fa-chart-line"></i></div>
-                <span class="node-text">ECONO INSIGHTS</span>
+        <div class="search-wrapper">
+            <div class="search-neo">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cari materi...">
             </div>
         </div>
 
-        <div class="trending-panel-mod">
-            <h3 style="font-size: 14px; font-weight: 800; margin-bottom: 15px;">TRENDING <i class="fas fa-chart-line"></i></h3>
-            <div style="display: flex; gap: 10px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 15px;">
-                <img src="chart.jpg" width="70" style="border-radius: 8px; border: 2px solid black;">
-                <p style="font-size: 10px; font-weight: 700;">IHSG Awal Maret Menguat, Saham BBRI, BBCA, BMRI Diborong...</p>
+        <main class="content-scroll">
+            
+            <div class="login-batik-frame" style="margin: 0; margin-bottom: 20px; padding: 10px; border-radius: 20px;">
+                <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #1a1a1a;">
+                    <img src="assets/images/video-thumb.jpg" style="width: 100%; display: block;" alt="Video">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <i class="fas fa-play-circle" style="font-size: 50px; color: white; filter: drop-shadow(0 4px 0 #000);"></i>
+                    </div>
+                </div>
+                <p class="node-text" style="text-align: left; margin-top: 10px; font-size: 11px;">
+                    Strategi Keuangan Cerdas: Panduan Finansial Masa Depan.
+                </p>
             </div>
-        </div>
 
-        <div class="bottom-nav-mod">
-            <i class="fas fa-home nav-item active"></i>
-            <i class="fas fa-history nav-item"></i>
-            <i class="fas fa-user nav-item"></i>
-        </div>
+            <nav class="menu-grid-mod">
+                <div class="menu-node">
+                    <div class="icon-box-mod"><i class="fas fa-book-open"></i></div>
+                    <span class="node-text">ECONO READ</span>
+                </div>
+                <div class="menu-node">
+                    <div class="icon-box-mod"><i class="fas fa-eye"></i></div>
+                    <span class="node-text">ECONO VISION</span>
+                </div>
+                <div class="menu-node">
+                    <div class="icon-box-mod"><i class="fas fa-headphones-alt"></i></div>
+                    <span class="node-text">ECONO LISTEN</span>
+                </div>
+                <div class="menu-node">
+                    <div class="icon-box-mod"><i class="fas fa-comments"></i></div>
+                    <span class="node-text">ECONO FORUM</span>
+                </div>
+                <div class="menu-node">
+                    <div class="icon-box-mod alert-active"><i class="fas fa-bell"></i></div>
+                    <span class="node-text">ECONO ALERT</span>
+                </div>
+                <div class="menu-node">
+                    <div class="icon-box-mod"><i class="fas fa-lightbulb"></i></div>
+                    <span class="node-text">ECONO INSIGHTS</span>
+                </div>
+            </nav>
+
+            <section class="trending-panel-mod">
+                <div class="panel-title">
+                    TRENDING <i class="fas fa-chart-line" style="color: #2E7D32;"></i>
+                </div>
+                <div class="news-row">
+                    <img src="assets/images/chart.jpg" alt="Chart">
+                    <div>
+                        <p>IHSG Awal Maret Menguat, Saham Bank Besar Diborong Asing...</p>
+                        <span style="font-size: 9px; opacity: 0.7;">2 jam yang lalu</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bottom-nav-mod">
+            <i class="fas fa-home active"></i>
+            <i class="fas fa-history"></i>
+            <i class="far fa-user"></i>
+        </footer>
     </div>
 
 </body>
