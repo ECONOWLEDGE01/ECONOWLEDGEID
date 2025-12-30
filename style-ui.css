@@ -182,3 +182,56 @@ h1.ui-title-bold {
     color: #fff; transform: scale(1.1);
     filter: drop-shadow(0 0 5px #fff);
 }
+/* Pengaturan Ranting pada Login */
+.login-batik-frame {
+    position: relative;
+    overflow: visible; /* Penting agar dekorasi bisa keluar frame */
+}
+
+.decor-branch-left {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 90px;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.2));
+}
+
+.decor-branch-right {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 90px;
+    z-index: 5;
+    transform: rotate(180deg);
+    pointer-events: none;
+    filter: drop-shadow(-3px -3px 2px rgba(0,0,0,0.2));
+}
+
+/* Pengaturan Wayang Dashboard agar Overlap */
+.header-modern {
+    overflow: visible !important; /* Memaksa wayang tidak terpotong */
+}
+
+.wayang-hero {
+    position: absolute;
+    right: -10px;
+    bottom: -50px; /* Nilai minus agar turun melewati batas hijau */
+    height: 170px; /* Ukuran diperbesar agar dominan */
+    z-index: 15;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3));
+    pointer-events: none;
+}
+
+/* Gunungan Watermark di Background */
+.gunungan-watermark {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+}
