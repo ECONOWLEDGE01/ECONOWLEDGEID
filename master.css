@@ -1,123 +1,209 @@
 /* ============================================================
-   ECONOWLEDGE MASTER UI - FINAL VERSION (NEO-BRUTALISM STYLE)
+   ECONOWLEDGE MASTER UI - COLOR RESTORATION
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
 :root {
-    --primary-green: #64DD17;
-    --dark-green: #2E7D32;
-    --header-green: #558B2F;
-    --accent-yellow: #FFF59D;
+    /* Kembalikan Warna Utama Sesuai Desain */
+    --primary-green: #64DD17;    /* Hijau Neon Login & Card */
+    --header-green: #558B2F;     /* Hijau Daun Header */
+    --dark-green: #2E7D32;       /* Hijau Tua untuk Border/Icon */
+    --accent-yellow: #FFF59D;    /* Kuning Cerah Search Bar */
     --cta-orange: linear-gradient(180deg, #FFA726 0%, #F57C00 100%);
     --bg-main: linear-gradient(180deg, #FDD835 0%, #AED581 50%, #7CB342 100%);
-    --black-line: #1a1a1a;
+    --black-line: #1a1a1a;       /* Garis Tegas Neo-Brutalism */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--bg-main);
+    background: var(--bg-main) !important; /* Memaksa background muncul */
     background-attachment: fixed;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 }
 
-/* KUNCI LAYOUT: Ini yang membuat tampilan tidak berubah/melebar di monitor */
+/* KUNCI LAYOUT */
 .app-container {
     width: 100%;
-    max-width: 414px; /* Standar iPhone 11/12/13/14 */
+    max-width: 414px;
     min-height: 100vh;
     background: transparent;
     position: relative;
     overflow-x: hidden;
-    box-shadow: 0 0 100px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 /* BACKGROUND DECOR */
-.ui-bg-elements { position: fixed; top: 0; width: 414px; height: 100%; pointer-events: none; z-index: 0; }
-.gunungan-watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; opacity: 0.1; }
+.ui-bg-elements { 
+    position: fixed; 
+    top: 0; 
+    width: 414px; 
+    height: 100%; 
+    pointer-events: none; 
+    z-index: 0; 
+}
 
-/* LOGIN UI - TEGAS */
+.gunungan-watermark { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 90%; 
+    opacity: 0.15; 
+    filter: grayscale(100%) invert(0); 
+}
+
+/* LOGIN UI - COLOR FIXED */
 .login-batik-frame {
-    background: #43A047 url('https://www.transparenttextures.com/patterns/batik-fractal.png'); /* Pattern batik */
+    background-color: #43A047; /* Dasar Hijau */
+    background-image: url('https://www.transparenttextures.com/patterns/batik-fractal.png');
     padding: 15px;
     border-radius: 30px;
     margin: 30px 20px;
-    border: 3px solid var(--black-line); /* Garis tegas */
-    box-shadow: 10px 10px 0px var(--black-line); /* Shadow Neo-Brutalism */
+    border: 3px solid var(--black-line);
+    box-shadow: 10px 10px 0px var(--black-line);
 }
 
 .login-card-inner {
-    background: var(--primary-green);
+    background-color: var(--primary-green) !important; /* Hijau Terang Login */
     border-radius: 20px;
     padding: 40px 20px;
     border: 2px solid var(--black-line);
 }
 
-.ui-title-bold { font-size: 28px; font-weight: 800; color: white; margin-bottom: 30px; text-shadow: 2px 2px var(--black-line); }
+.ui-title-bold { 
+    font-size: 28px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    margin-bottom: 30px; 
+    text-shadow: 2px 2px var(--black-line); 
+}
 
 .ui-input-field {
-    width: 100%; padding: 15px; border: 2px solid var(--black-line); border-radius: 10px; margin-bottom: 15px;
-    font-weight: 600; box-shadow: 4px 4px 0px var(--black-line);
+    width: 100%; 
+    padding: 15px; 
+    background-color: #ffffff; /* Putih Bersih */
+    border: 2px solid var(--black-line); 
+    border-radius: 10px; 
+    margin-bottom: 15px;
+    font-weight: 600; 
+    box-shadow: 4px 4px 0px var(--black-line);
 }
 
 .ui-btn-signup {
-    width: 100%; padding: 18px; background: var(--cta-orange); border: 3px solid var(--black-line);
-    border-radius: 12px; color: white; font-weight: 800; font-size: 20px;
-    box-shadow: 6px 6px 0px var(--black-line); cursor: pointer; transition: 0.1s;
+    width: 100%; 
+    padding: 18px; 
+    background: var(--cta-orange); /* Orange Gradasi */
+    border: 3px solid var(--black-line);
+    border-radius: 12px; 
+    color: white; 
+    font-weight: 800; 
+    font-size: 20px;
+    box-shadow: 6px 6px 0px var(--black-line); 
+    cursor: pointer;
 }
 
-.ui-btn-signup:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px; }
-
-/* DASHBOARD UI - TEGAS */
+/* DASHBOARD UI - COLOR FIXED */
 .header-modern {
-    background: var(--header-green); padding: 30px 20px; border-radius: 0 0 40px 40px;
-    border-bottom: 4px solid var(--black-line); color: white; position: relative;
+    background-color: var(--header-green) !important; /* Hijau Daun Header */
+    padding: 30px 20px; 
+    border-radius: 0 0 40px 40px;
+    border-bottom: 4px solid var(--black-line); 
+    color: white; 
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.avatar-frame { width: 65px; height: 65px; border-radius: 50%; border: 3px solid var(--black-line); overflow: hidden; background: white; }
-
-.wayang-hero { position: absolute; right: -5px; bottom: -35px; height: 160px; filter: drop-shadow(4px 4px 0px var(--black-line)); z-index: 10; }
+.avatar-frame { 
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%; 
+    border: 3px solid var(--black-line); 
+    overflow: hidden; 
+    background: white; 
+}
 
 .search-neo {
-    background: var(--accent-yellow); border: 3px solid var(--black-line);
-    box-shadow: 6px 6px 0px var(--black-line); border-radius: 50px;
-    margin: -25px 25px 0; padding: 12px 20px; display: flex; align-items: center; z-index: 20; position: relative;
+    background-color: var(--accent-yellow) !important; /* Kuning Search Bar */
+    border: 3px solid var(--black-line);
+    box-shadow: 6px 6px 0px var(--black-line); 
+    border-radius: 50px;
+    margin: -25px 25px 0; 
+    padding: 12px 20px; 
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    z-index: 10;
 }
 
-.search-neo input { flex: 1; border: none; background: transparent; font-weight: 700; padding-left: 10px; outline: none; }
+.search-neo input { 
+    flex: 1; 
+    border: none; 
+    background: transparent; 
+    font-weight: 700; 
+    color: var(--black-line);
+}
 
-/* GRID MENU */
-.menu-grid-mod { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 20px; }
-
+/* GRID MENU - COLOR FIXED */
 .icon-box-mod {
-    width: 75px; height: 75px; background: #C5E1A5; border: 3px solid var(--black-line);
-    border-radius: 20px; display: flex; justify-content: center; align-items: center;
-    box-shadow: 5px 5px 0px var(--black-line); transition: 0.1s;
+    width: 75px; 
+    height: 75px; 
+    background-color: #C5E1A5 !important; /* Hijau Pucat Ikon */
+    border: 3px solid var(--black-line);
+    border-radius: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 5px 5px 0px var(--black-line); 
+    color: var(--dark-green);
+    font-size: 24px;
 }
 
-.icon-box-mod:active { transform: translate(3px, 3px); box-shadow: 0px 0px 0px; }
-
-.icon-box-mod.alert-active { background: #FFEB3B; }
-
-.node-text { font-size: 10px; font-weight: 800; color: var(--black-line); margin-top: 8px; text-align: center; }
+.icon-box-mod.alert-active { 
+    background-color: #FFEB3B !important; /* Kuning Alert */
+}
 
 /* TRENDING */
 .trending-panel-mod {
-    background: linear-gradient(180deg, #E0E0E0 0%, #9E9E9E 100%);
-    margin: 0 20px; padding: 20px; border-radius: 25px; border: 3px solid var(--black-line);
+    background: linear-gradient(180deg, #E0E0E0 0%, #9E9E9E 100%) !important;
+    margin: 20px; 
+    padding: 20px; 
+    border-radius: 25px; 
+    border: 3px solid var(--black-line);
     box-shadow: 6px 6px 0px var(--black-line);
 }
 
 /* BOTTOM NAV */
 .bottom-nav-mod {
-    position: fixed; bottom: 20px; width: 374px; /* Menyesuaikan container */
-    background: rgba(255,255,255,0.3); backdrop-filter: blur(10px);
-    height: 70px; border-radius: 40px; display: flex; justify-content: space-around;
-    align-items: center; border: 3px solid var(--black-line); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: fixed; 
+    bottom: 20px; 
+    width: 374px; 
+    background: rgba(255,255,255,0.4); 
+    backdrop-filter: blur(10px);
+    height: 70px; 
+    border-radius: 40px; 
+    display: flex; 
+    justify-content: space-around;
+    align-items: center; 
+    border: 3px solid var(--black-line);
 }
 
-.nav-item { color: var(--black-line); font-size: 26px; opacity: 0.5; }
-.nav-item.active { opacity: 1; filter: drop-shadow(0 0 5px white); }
+.nav-item { 
+    color: var(--black-line); 
+    font-size: 26px; 
+    opacity: 0.6; 
+}
+
+.nav-item.active { 
+    opacity: 1; 
+    color: #ffffff;
+    text-shadow: 2px 2px var(--black-line);
+}
