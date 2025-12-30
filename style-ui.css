@@ -1,239 +1,184 @@
-/* --- UI VARIABLES --- */
+/* =========================================
+   STYLE-UI.CSS
+   Fungsi: Mengatur Warna, Font, Border, Dekorasi
+   ========================================= */
+
+/* --- VARIABEL WARNA (Palet Econowledge) --- */
 :root {
-    --primary-green: #64DD17;    /* Hijau neon khas desain */
-    --header-green: #558B2F;     /* Hijau dashboard */
-    --accent-yellow: #FFF176;    /* Kuning search bar */
-    --deep-text: #1B5E20;        /* Teks hijau tua */
-    --cta-orange: linear-gradient(180deg, #FFA726 0%, #F57C00 100%);
-    --main-bg: linear-gradient(180deg, #FDD835 0%, #AED581 50%, #7CB342 100%);
+    --lime-neon: #64DD17;     /* Hijau Stabilo Login */
+    --green-leaf: #558B2F;    /* Hijau Header Dashboard */
+    --green-dark: #1B5E20;    /* Hijau Teks Tua */
+    --yellow-pop: #FFF59D;    /* Kuning Search Bar */
+    --orange-cta: linear-gradient(180deg, #FFA726 0%, #F57C00 100%);
+    --bg-gradient: linear-gradient(180deg, #FDD835 0%, #AED581 50%, #7CB342 100%);
+    --border-color: #1a1a1a;  /* Warna Garis Hitam */
+    --border-width: 2.5px;    /* Ketebalan Garis */
+    --shadow-hard: 4px 4px 0px #1a1a1a; /* Bayangan Keras */
 }
 
-/* --- GLOBAL UI --- */
-body.body-login, body.body-dashboard {
-    background: var(--main-bg);
-    background-attachment: fixed;
+/* --- GLOBAL STYLE --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed; /* Kunci background agar tidak ikut scroll */
+    color: #333;
 }
 
-/* --- LOGIN UI SPECIFICS --- */
-.batik-outer-frame {
-    background: url('assets/images/pattern-batik.png'); /* Pattern batik berulang */
-    background-size: 150px;
+/* Dekorasi Background */
+.gunungan-watermark {
+    opacity: 0.1;
+    filter: grayscale(100%);
+}
+
+/* --- LOGIN UI DETAILS --- */
+.login-batik-frame {
+    background-color: #43A047;
+    background-image: url('assets/images/pattern-batik.png'); /* Pastikan ada file ini */
+    background-size: 100px;
     border-radius: 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
 }
 
-/* Dekorasi Ranting */
-.branch-top-left {
-    position: absolute; top: -10px; left: -10px;
-    width: 80px; height: 80px;
-    background: url('assets/images/branch-left.png') no-repeat;
-    background-size: contain; z-index: 5;
-}
-.branch-bottom-right {
-    position: absolute; bottom: -10px; right: -10px;
-    width: 80px; height: 80px;
-    background: url('assets/images/branch-right.png') no-repeat;
-    background-size: contain; z-index: 5;
-    transform: rotate(10deg);
-}
-
-.login-inner-card {
-    background-color: var(--primary-green);
-    background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+.login-card-inner {
+    background-color: var(--lime-neon);
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: var(--border-width) solid var(--border-color);
+    color: white;
 }
 
-.ui-title {
-    color: white;
+h1.ui-title-bold {
     font-size: 26px;
     font-weight: 800;
-    margin-bottom: 25px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    text-shadow: 2px 2px 0px var(--border-color); /* Efek teks timbul */
+    margin-bottom: 20px;
 }
 
-.ui-input {
-    border-radius: 8px;
-    background: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+.ui-input-field {
+    background: #fff;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: var(--shadow-hard);
+    outline: none;
 }
+.ui-input-field::placeholder { color: #CE93D8; }
 
-.ui-input::placeholder {
-    color: #CE93D8; /* Warna ungu sesuai desain */
-}
-
-.ui-btn-primary {
-    background: var(--cta-orange);
+.ui-btn-signup {
+    background: var(--orange-cta);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 12px;
     color: white;
     font-weight: 800;
     font-size: 18px;
-    border-radius: 12px;
-    box-shadow: 0 6px 0px #E65100; /* Efek 3D tombol */
-    transition: all 0.1s;
+    box-shadow: var(--shadow-hard);
+    transition: transform 0.1s;
 }
-
-.ui-btn-primary:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 0px #E65100;
-}
-
-.ui-divider span {
-    background: var(--primary-green);
-    padding: 0 15px;
-    color: white;
-    font-size: 12px;
-    font-weight: 600;
-    z-index: 2;
-    position: relative;
-}
-
-.ui-divider::after {
-    content: "";
-    position: absolute;
-    top: 50%; left: 0; width: 100%; height: 1px;
-    background: rgba(255,255,255,0.4);
+.ui-btn-signup:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-color);
 }
 
 .btn-social {
-    width: 50px; height: 50px;
-    border-radius: 50%;
     background: white;
-    border: none;
-    font-size: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--border-color);
+    font-size: 18px;
 }
 
-/* --- DASHBOARD UI SPECIFICS --- */
-.ui-watermark-gunungan {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 80%; height: 60%;
-    background: url('assets/images/gunungan-outline.png') center no-repeat;
-    background-size: contain;
-    opacity: 0.12; z-index: -1;
-}
+.agreement-box { font-size: 11px; font-weight: 600; color: #fff; text-shadow: 1px 1px 0 #000; }
+.agreement-box a { color: #fff; text-decoration: underline; }
 
-.ui-header-nav {
-    background-color: var(--header-green);
-    border-radius: 0 0 35px 35px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+/* --- DASHBOARD UI DETAILS --- */
+.header-modern {
+    background-color: var(--green-leaf);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-bottom: 3px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     color: white;
 }
 
-.avatar-wrapper img {
-    width: 100%; height: 100%; border-radius: 50%;
-    border: 2px solid white; object-fit: cover;
+.nav-top i { font-size: 24px; cursor: pointer; }
+
+.avatar-frame {
+    border-radius: 50%;
+    border: var(--border-width) solid white;
+    overflow: hidden;
+    background: #ddd;
+}
+.avatar-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.welcome-msg h2 { font-size: 18px; font-weight: 800; margin-bottom: 5px; }
+.welcome-msg p { font-size: 10px; font-style: italic; opacity: 0.9; }
+
+.wayang-hero {
+    filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.3)); /* Shadow wayang */
 }
 
-.welcome-msg h2 { font-size: 20px; font-weight: 700; }
-.welcome-msg p { font-size: 10px; font-style: italic; opacity: 0.9; line-height: 1.2; }
-
-.wayang-img {
-    position: absolute; right: -15px; bottom: -20px;
-    height: 140px; z-index: 1;
-}
-
-/* Search Bar Kuning Tegas */
-.search-bar-ui {
-    background: var(--accent-yellow);
-    border: 2px solid #212121;
-    border-radius: 25px;
-    box-shadow: 4px 4px 0px #000; /* Efek desain neo-brutalism halus */
-}
-
-/* Menu Icons - Boxy Rounded */
-.node-icon {
-    background: #C5E1A5;
-    border: 2.5px solid #33691E;
-    border-radius: 18px;
-    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1);
-}
-
-.node-icon img { width: 35px; height: 35px; }
-
-.node-label {
-    margin-top: 8px; font-size: 10px; font-weight: 800;
-    color: var(--deep-text);
-}
-
-.alert-active { background: #FFEB3B !important; border-color: #F57F17 !important; }
-
-/* Trending Section Gray Gradient */
-.trending-panel {
-    background: linear-gradient(180deg, #E0E0E0 0%, #9E9E9E 100%);
-    border-radius: 20px;
-    border: 1px solid #757575;
-}
-
-.badge-trending {
-    font-weight: 800; font-size: 14px; color: #212121;
-}
-
-/* Bottom Nav Glassmorphism */
-.bottom-dock {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.dock-link i { font-size: 24px; color: rgba(255,255,255,0.6); }
-.dock-link.active i { color: white; filter: drop-shadow(0 0 8px white); }
-
-/* 1. Kunci Lebar Layar agar seperti HP */
-.app-container {
-    max-width: 480px;
-    margin: 0 auto;
-    background: transparent;
-    position: relative;
-    min-height: 100vh;
-}
-
-/* 2. Detail Frame Batik (LOGIN & BANNER) */
-.batik-border {
-    padding: 12px;
-    background: url('pattern-batik.png') repeat;
-    background-size: 80px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-/* 3. Detail Search Bar (Sangat Penting) */
-.search-bar-styled {
-    background: #FFF59D; /* Kuning cerah sesuai desain */
-    border: 3px solid #1a1a1a; /* Garis tegas */
+/* Search Bar (Kuning Tegas) */
+.search-neo {
+    background-color: var(--yellow-pop);
+    border: var(--border-width) solid var(--border-color);
     border-radius: 50px;
-    display: flex;
-    align-items: center;
-    padding: 5px 20px;
-    box-shadow: 5px 5px 0px #1a1a1a; /* Shadow tegas/Neo-brutalism */
+    box-shadow: var(--shadow-hard);
+}
+.search-neo input {
+    background: transparent; border: none; outline: none;
+    font-weight: 700; color: var(--border-color);
+}
+.search-neo i { color: var(--border-color); }
+
+/* Menu Icons (Rounded Box) */
+.icon-box-mod {
+    background-color: #C5E1A5;
+    border: var(--border-width) solid var(--green-dark);
+    border-radius: 18px;
+    box-shadow: 4px 4px 0px var(--green-dark);
+    font-size: 28px; color: var(--green-dark);
+    transition: transform 0.1s;
+}
+.icon-box-mod:active { transform: scale(0.95); }
+.icon-box-mod.alert-active { background-color: #FFEB3B; }
+
+.node-text {
+    font-size: 10px; font-weight: 800; color: var(--green-dark);
+    margin-top: 5px; letter-spacing: 0.5px;
 }
 
-/* 4. Ikon Grid (Rounded Box Detail) */
-.menu-node-icon {
-    width: 65px;
-    height: 65px;
-    background: #C5E1A5;
-    border: 2px solid #33691E;
-    border-radius: 18px; /* Bukan lingkaran sempurna, tapi rounded box */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 0px #33691E; /* Efek tombol 3D */
-    transition: all 0.2s ease;
+/* Trending Section */
+.trending-panel-mod {
+    background: linear-gradient(180deg, #E0E0E0 0%, #9E9E9E 100%);
+    border: var(--border-width) solid #757575;
+    border-radius: 20px;
+    box-shadow: var(--shadow-hard);
 }
 
-.menu-node-icon:active {
-    transform: translateY(4px);
-    box-shadow: 0 0px 0px #33691E;
-}
+.panel-title { font-size: 14px; font-weight: 800; color: #3E2723; margin-bottom: 10px; }
 
-/* 5. Wayang Overlap */
-.wayang-absolute {
-    position: absolute;
-    right: -10px;
-    bottom: -30px;
-    height: 150px;
-    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
-    z-index: 10;
+.news-row {
+    background: rgba(255,255,255,0.4);
+    padding: 10px; border-radius: 10px;
+}
+.news-row img {
+    width: 60px; height: 40px; border-radius: 5px; border: 1px solid #000;
+}
+.news-row p { font-size: 10px; font-weight: 700; line-height: 1.2; }
+
+/* Bottom Nav (Transparan Glass) */
+.bottom-nav-mod {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.bottom-nav-mod i {
+    font-size: 24px; color: rgba(255,255,255,0.6);
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+.bottom-nav-mod i.active {
+    color: #fff; transform: scale(1.1);
+    filter: drop-shadow(0 0 5px #fff);
 }
