@@ -1,111 +1,493 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dashboard | Econowledge</title>
-    
-    <link rel="stylesheet" href="style-base.css">
-    <link rel="stylesheet" href="style-ui.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECONOWLEDGE Dashboard</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #e8f5e9;
+            --accent-gold: #fbc02d;
+            --text-dark: #1b5e20;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f8e9; /* Latar belakang hijau sangat muda */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.9)), url('15.png'); /* Pattern Gunungan tipis di background body */
+            background-repeat: repeat;
+            background-size: 500px;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- HEADER DENGAN BATIK --- */
+        header {
+            /* Menggunakan Batik sebagai background header */
+            background: linear-gradient(rgba(0, 50, 0, 0.9), rgba(0, 50, 0, 0.8)), url('pattern-batik.png.jpg');
+            background-size: 200px;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px; /* Sesuaikan ukuran logo */
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .logout-btn {
+            background-color: #c62828;
+            color: white;
+            border: 2px solid white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .container {
+            flex: 1;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- WELCOME SECTION (HERO) --- */
+        .welcome-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border-left: 10px solid var(--accent-gold);
+        }
+
+        .welcome-text {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .welcome-text h1 {
+            font-size: 38px;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .welcome-text p {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px;
+        }
+
+        /* Karakter Wayang di Kanan */
+        .welcome-image {
+            height: 250px;
+            position: relative;
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Hiasan background batik tipis di welcome section */
+        .welcome-bg-decor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('pattern-batik.png.jpg');
+            opacity: 0.1;
+            mask-image: linear-gradient(to left, black, transparent);
+            -webkit-mask-image: linear-gradient(to left, black, transparent);
+        }
+
+        /* --- FEATURES GRID --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Watermark Gunungan di dalam kartu */
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 120px;
+            height: 150px;
+            background-image: url('gunungan.png.png'); /* Menggunakan Gunungan */
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.15; /* Transparan */
+            transition: transform 0.3s ease;
+            transform: rotate(-15deg);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(46, 125, 50, 0.2);
+            border-color: var(--primary-green);
+        }
+
+        .feature-card:hover::before {
+            transform: rotate(0deg) scale(1.1);
+            opacity: 0.25;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-green);
+            font-size: 22px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card button {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card button:hover {
+            background-color: #1b5e20;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            /* Footer juga menggunakan Batik */
+            background: linear-gradient(rgba(0, 50, 0, 0.95), rgba(0, 50, 0, 0.95)), url('pattern-batik.png.jpg');
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            border-top: 4px solid var(--accent-gold);
+            font-size: 14px;
+        }
+
+        /* --- MODAL STYLES (Tetap Sama) --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border-top: 10px solid var(--primary-green);
+        }
+
+        .modal-buttons button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+
+        .confirm-btn { background-color: var(--primary-green); color: white; }
+        .confirm-btn:hover { background-color: #1b5e20; }
+        .cancel-btn { background-color: #e0e0e0; color: #333; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .welcome-section {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .welcome-image {
+                height: 150px;
+                margin-bottom: 20px;
+            }
+            .header-left {
+                width: 100%;
+                justify-content: center;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .welcome-bg-decor {
+                width: 100%;
+                height: 50%;
+                top: 0;
+                mask-image: linear-gradient(to bottom, black, transparent);
+                -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <div class="ui-bg-elements">
-        <img src="assets/images/gunungan.png" class="gunungan-watermark" alt="">
-    </div>
-
-    <div class="app-container">
-        
-       <header class="header-modern">
-    <div class="nav-top">
-        <img src="assets/images/logo-white.png" class="logo-mini" alt="Econowledge">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <div class="user-banner">
-        <div class="avatar-frame">
-            <img src="assets/images/user.jpg" alt="User">
+    <header>
+        <div class="header-left">
+            <img src="logo.png.png" alt="ECONOWLEDGE Logo" class="logo-img">
         </div>
-        <div class="welcome-msg">
-            <h2>Halo! Eno People</h2>
-            <p>Economy Meets Knowledge: Empowering Your Financial Future!</p>
-        </div>
-        
-        <img src="assets/images/wayang.png" class="wayang-hero" alt="Wayang">
-    </div>
-</header>
-
-        <div class="search-wrapper">
-            <div class="search-neo">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cari materi...">
+        <div class="header-right">
+            <div class="user-info">
+                <span class="user-name" id="userNameDisplay">Loading...</span>
+                <button class="logout-btn" id="logoutBtn">Keluar</button>
             </div>
         </div>
+    </header>
 
-        <main class="content-scroll">
+    <div class="container">
+        <div class="welcome-section">
+            <div class="welcome-bg-decor"></div> <div class="welcome-text">
+                <h1>Sugeng Rawuh!</h1> <p>Selamat datang di <strong>ECONOWLEDGE</strong>. Jelajahi, Pelajari, dan Kuasai Ekonomi dengan semangat kearifan lokal yang berkelanjutan.</p>
+            </div>
             
-            <div class="login-batik-frame" style="margin: 0; margin-bottom: 20px; padding: 10px; border-radius: 20px;">
-                <div style="position: relative; border-radius: 10px; overflow: hidden; border: 2px solid #1a1a1a;">
-                    <img src="assets/images/video-thumb.jpg" style="width: 100%; display: block;" alt="Video">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                        <i class="fas fa-play-circle" style="font-size: 50px; color: white; filter: drop-shadow(0 4px 0 #000);"></i>
-                    </div>
-                </div>
-                <p class="node-text" style="text-align: left; margin-top: 10px; font-size: 11px;">
-                    Strategi Keuangan Cerdas: Panduan Finansial Masa Depan.
-                </p>
+            <img src="17.png" alt="Mascot" class="welcome-image">
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card" onclick="navigateToFeature('econo-read.html')">
+                <div class="icon">📖</div>
+                <h3>Econo-Read</h3>
+                <p>Akses artikel ekonomi lengkap, studi kasus, dan tutorial mendalam.</p>
+                <button>Buka</button>
             </div>
 
-            <nav class="menu-grid-mod">
-                <div class="menu-node">
-                    <div class="icon-box-mod"><i class="fas fa-book-open"></i></div>
-                    <span class="node-text">ECONO READ</span>
-                </div>
-                <div class="menu-node">
-                    <div class="icon-box-mod"><i class="fas fa-eye"></i></div>
-                    <span class="node-text">ECONO VISION</span>
-                </div>
-                <div class="menu-node">
-                    <div class="icon-box-mod"><i class="fas fa-headphones-alt"></i></div>
-                    <span class="node-text">ECONO LISTEN</span>
-                </div>
-                <div class="menu-node">
-                    <div class="icon-box-mod"><i class="fas fa-comments"></i></div>
-                    <span class="node-text">ECONO FORUM</span>
-                </div>
-                <div class="menu-node">
-                    <div class="icon-box-mod alert-active"><i class="fas fa-bell"></i></div>
-                    <span class="node-text">ECONO ALERT</span>
-                </div>
-                <div class="menu-node">
-                    <div class="icon-box-mod"><i class="fas fa-lightbulb"></i></div>
-                    <span class="node-text">ECONO INSIGHTS</span>
-                </div>
-            </nav>
+            <div class="feature-card" onclick="navigateToFeature('econo-vision.html')">
+                <div class="icon">📊</div>
+                <h3>Econo-Vision</h3>
+                <p>Visualisasi data ekonomi dengan grafik interaktif dan analisis pasar real-time.</p>
+                <button>Buka</button>
+            </div>
 
-            <section class="trending-panel-mod">
-                <div class="panel-title">
-                    TRENDING <i class="fas fa-chart-line" style="color: #2E7D32;"></i>
-                </div>
-                <div class="news-row">
-                    <img src="assets/images/chart.jpg" alt="Chart">
-                    <div>
-                        <p>IHSG Awal Maret Menguat, Saham Bank Besar Diborong Asing...</p>
-                        <span style="font-size: 9px; opacity: 0.7;">2 jam yang lalu</span>
-                    </div>
-                </div>
-            </section>
+            <div class="feature-card" onclick="navigateToFeature('econo-listen.html')">
+                <div class="icon">🎧</div>
+                <h3>Econo-Listen</h3>
+                <p>Dengarkan podcast ekonomi dan wawancara eksklusif dari para ahli.</p>
+                <button>Buka</button>
+            </div>
 
-        </main>
+            <div class="feature-card" onclick="navigateToFeature('econo-forum.html')">
+                <div class="icon">💬</div>
+                <h3>Econo-Forum</h3>
+                <p>Berdiskusi dengan komunitas pecinta ekonomi dan berbagi wawasan.</p>
+                <button>Buka</button>
+            </div>
 
-        <footer class="bottom-nav-mod">
-            <i class="fas fa-home active"></i>
-            <i class="fas fa-history"></i>
-            <i class="far fa-user"></i>
-        </footer>
+            <div class="feature-card" onclick="navigateToFeature('econo-alert.html')">
+                <div class="icon">🚨</div>
+                <h3>Econo-Alert</h3>
+                <p>Dapatkan notifikasi pasar terkini dan indikator ekonomi penting.</p>
+                <button>Buka</button>
+            </div>
+
+            <div class="feature-card" onclick="navigateToFeature('econo-insights.html')">
+                <div class="icon">💡</div>
+                <h3>Econo-Insights</h3>
+                <p>Wawasan personal berdasarkan progres belajar dan minat Anda.</p>
+                <button>Buka</button>
+            </div>
+        </div>
     </div>
 
+    <footer>
+        <p>&copy; 2025 ECONOWLEDGE. All rights reserved. | Melestarikan Literasi Ekonomi</p>
+    </footer>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Konfirmasi Keluar</h2>
+            <p>Apakah Anda yakin ingin keluar? Anda harus login kembali untuk mengakses dashboard.</p>
+            <div class="modal-buttons">
+                <button class="confirm-btn" onclick="confirmLogout()">Ya, Keluar</button>
+                <button class="cancel-btn" onclick="closeLogoutModal()">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="navigationModal" class="modal">
+        <div class="modal-content">
+            <h2>Mengalihkan...</h2>
+            <p id="navigationMessage">Mohon tunggu sebentar.</p>
+            <div style="margin-top: 15px;">
+                <span style="font-size: 30px; animation: spin 1s infinite linear; display: inline-block;">⚙️</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+
+    <script>
+        // ==========================================
+        // LOGIC SCRIPTS (SAMA SEPERTI SEBELUMNYA)
+        // ==========================================
+
+        function checkLoginSession() {
+            const userSession = localStorage.getItem('userSession');
+            const userName = localStorage.getItem('userName');
+            if (!userSession || !userName) {
+                window.location.replace('index.html');
+                return false;
+            }
+            return true;
+        }
+
+        function displayUserName() {
+            const userName = localStorage.getItem('userName');
+            const userNameDisplay = document.getElementById('userNameDisplay');
+            if (userName && userNameDisplay) {
+                userNameDisplay.textContent = "Halo, " + userName;
+            }
+        }
+
+        // Silent Check saat load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (checkLoginSession()) {
+                displayUserName();
+            }
+        });
+
+        // Navigation Logic
+        function navigateToFeature(featurePage) {
+            if (!checkLoginSession()) return;
+
+            const navigationModal = document.getElementById('navigationModal');
+            const navigationMessage = document.getElementById('navigationMessage');
+            
+            const featureTitle = featurePage.split('.')[0].replace('-', ' ').toUpperCase();
+            navigationMessage.innerHTML = `Sedang membuka <strong>${featureTitle}</strong>...`;
+            navigationModal.style.display = 'block';
+
+            setTimeout(() => {
+                window.location.href = featurePage;
+            }, 800);
+        }
+
+        // Logout Logic
+        const logoutBtn = document.getElementById('logoutBtn');
+        const logoutModal = document.getElementById('logoutModal');
+
+        logoutBtn.onclick = function() { logoutModal.style.display = 'block'; }
+        
+        function closeLogoutModal() { logoutModal.style.display = 'none'; }
+        
+        function confirmLogout() {
+            localStorage.clear();
+            window.location.replace('index.html');
+        }
+
+        window.onclick = function(event) {
+            if (event.target == logoutModal) closeLogoutModal();
+        };
+    </script>
 </body>
 </html>
