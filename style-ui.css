@@ -235,3 +235,90 @@ h1.ui-title-bold {
     z-index: -1;
     pointer-events: none;
 }
+/* =========================================
+   ECO FEATURE UI
+   safe-append for ui.css
+   ========================================= */
+
+/* header */
+.eco-header {
+  background: linear-gradient(90deg, var(--primary), var(--primary-soft));
+  color: var(--text-on-primary);
+}
+
+.eco-header h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.eco-back {
+  color: inherit;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* search */
+.eco-search {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* cards */
+.eco-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.eco-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.eco-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.eco-meta {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+}
+
+/* forum */
+.eco-forum-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+}
+
+/* buttons */
+.eco-btn {
+  padding: 8px 14px;
+  border-radius: 18px;
+  background: var(--primary);
+  color: var(--text-on-primary);
+  font-size: 0.75rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+/* bottom nav */
+.eco-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background: linear-gradient(90deg, var(--primary), var(--primary-soft));
+  box-shadow: var(--shadow-lg);
+}
+
+.eco-bottom-nav a {
+  color: var(--text-on-primary);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
