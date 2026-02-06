@@ -235,248 +235,139 @@ h1.ui-title-bold {
     z-index: -1;
     pointer-events: none;
 }
-/* =========================================
-   ECO FEATURE UI
-   safe-append for ui.css
-   ========================================= */
+/* ===============================
+   ECONOWLEDGE ADVANCED UI EFFECT
+   Append to ui.css (DO NOT MODIFY EXISTING CSS)
+   =============================== */
 
-/* header */
-.eco-header {
-  background: linear-gradient(90deg, var(--primary), var(--primary-soft));
-  color: var(--text-on-primary);
-}
-
-.eco-header h1 {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.eco-back {
-  color: inherit;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-/* search */
-.eco-search {
-  background: var(--card-bg);
-  box-shadow: var(--shadow-sm);
-}
-
-/* cards */
-.eco-card {
-  background: var(--card-bg);
-  box-shadow: var(--shadow-md);
-}
-
-.eco-card h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-.eco-card p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-.eco-meta {
-  font-size: 0.72rem;
-  color: var(--text-subtle);
-}
-
-/* forum */
-.eco-forum-avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--primary-soft);
-}
-
-/* buttons */
+/* === BUTTON INTERACTION === */
 .eco-btn {
-  padding: 8px 14px;
-  border-radius: 18px;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  font-size: 0.75rem;
-  text-decoration: none;
-  width: fit-content;
-}
-
-/* bottom nav */
-.eco-bottom-nav {
-  position: fixed;
-  bottom: 0;
-  inset-inline: 0;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  background: linear-gradient(90deg, var(--primary), var(--primary-soft));
-  box-shadow: var(--shadow-lg);
-}
-
-.eco-bottom-nav a {
-  color: var(--text-on-primary);
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-/* =========================================
-   ECO FEATURES – REALISTIC NO-IMAGE UI
-   Append to ui.css
-========================================= */
-
-/* ---------- Global refinement ---------- */
-.eco-content {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.eco-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* ---------- Card without image ---------- */
-.eco-card {
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.95),
-    rgba(255,255,255,0.88)
-  );
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.06),
-    inset 0 1px 0 rgba(255,255,255,0.4);
-  transition: transform .15s ease, box-shadow .15s ease;
+  overflow: hidden;
+  transition: transform 0.15s ease;
 }
 
-.eco-card:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 10px 26px rgba(0,0,0,0.08);
+.eco-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-/* ---------- Card typography ---------- */
-.eco-card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  line-height: 1.35;
-}
-
-.eco-card p {
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--text-muted);
-}
-
-/* ---------- Meta info ---------- */
-.eco-meta {
-  font-size: 11.5px;
-  margin-top: 8px;
-  color: #7a7a7a;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.eco-meta::before {
-  content: "•";
-  font-size: 14px;
-  line-height: 1;
-  color: var(--primary);
-}
-
-/* ---------- Search bar refinement ---------- */
-.eco-search {
-  background: rgba(255,255,255,0.92);
-  border-radius: 24px;
-  padding: 10px 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.eco-search input {
-  font-size: 13px;
-  color: var(--text-main);
-}
-
-/* ---------- Forum avatar replacement ---------- */
-.eco-forum-avatar {
-  width: 42px;
-  height: 42px;
-  font-size: 13px;
-  font-weight: 600;
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-soft)
-  );
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-}
-
-/* ---------- Listen (audio) ---------- */
-.listen-card audio {
-  margin-top: 10px;
-  border-radius: 10px;
-  background: #f4f4f4;
-}
-
-/* ---------- Read button ---------- */
-.eco-btn {
-  align-self: flex-start;
-  font-weight: 500;
-  letter-spacing: .2px;
-}
-
-.eco-btn:hover {
-  opacity: .9;
-}
-
-/* ---------- Vision (video placeholder) ---------- */
-.vision-card .video-wrap {
-  height: 140px;
-  border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    #dff3d0,
-    #c8ebaa
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.vision-card .video-wrap::before {
-  content: "▶";
-  font-size: 28px;
-  color: var(--primary);
-  opacity: .7;
-}
-
-/* ---------- Bottom navigation polish ---------- */
-.eco-bottom-nav a {
-  font-size: 11px;
-  opacity: .85;
-}
-
-.eco-bottom-nav a:hover {
+.eco-btn:hover::after {
   opacity: 1;
 }
 
-/* ---------- Desktop refinement ---------- */
-@media (min-width: 768px) {
-  .eco-card h3 { font-size: 16px; }
-  .eco-card p { font-size: 14px; }
-  .eco-content {
-    max-width: 900px;
-    margin: auto;
+.eco-btn:active {
+  transform: scale(0.96);
+}
+
+/* === CARD INTERACTION === */
+.eco-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eco-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.eco-card:focus-within {
+  outline: 2px solid rgba(102,187,47,0.5);
+}
+
+.eco-card:active {
+  transform: scale(0.98);
+}
+
+/* === BADGE STATUS === */
+.eco-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: rgba(102,187,47,0.15);
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+/* === PROGRESS BAR === */
+.eco-progress {
+  height: 6px;
+  border-radius: 6px;
+  background: #e0e0e0;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.eco-progress span {
+  display: block;
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(90deg, #8bc34a, #66bb2f);
+}
+
+/* === SKELETON LOADING (FAKE DATA FEEL) === */
+.eco-skeleton {
+  height: 12px;
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #f5f5f5 37%,
+    #eeeeee 63%
+  );
+  background-size: 400% 100%;
+  animation: eco-skeleton 1.4s infinite;
+}
+
+@keyframes eco-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* === BOTTOM NAV ACTIVE STATE === */
+.eco-bottom-nav a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.eco-bottom-nav a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.eco-bottom-nav a.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 20px;
+  margin: 4px auto 0;
+  background: var(--primary);
+  border-radius: 6px;
+}
+
+/* === SECTION FADE IN (STATIC BUT FEELS DYNAMIC) === */
+.eco-section {
+  animation: eco-fade 0.6s ease both;
+}
+
+@keyframes eco-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
