@@ -1,211 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Econo Read | ECONOWLEDGE</title>
-
-<style>
-/* =====================
-   AMBIL VARIABEL UTAMA
-   ===================== */
-:root {
-  --primary-green: #2e7d32;
-  --light-green: #e8f5e9;
-  --accent-gold: #fbc02d;
-  --text-dark: #1b5e20;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background-color: #f1f8e9;
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95)),
-    url('15.png');
-  background-repeat: repeat;
-  background-size: 500px;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* =====================
-   HEADER (SAMA DASHBOARD)
-   ===================== */
-header {
-  background: linear-gradient(rgba(0,50,0,0.9), rgba(0,50,0,0.8)),
-              url('pattern-batik.png.jpg');
-  background-size: 200px;
-  color: white;
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 4px solid var(--accent-gold);
-}
-
-header h2 {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-/* =====================
-   CONTAINER
-   ===================== */
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  flex: 1;
-}
-
-/* =====================
-   FEATURE HERO
-   ===================== */
-.feature-hero {
-  background: white;
-  border-radius: 20px;
-  padding: 35px;
-  margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border-left: 10px solid var(--accent-gold);
-}
-
-.feature-hero h1 {
-  color: var(--primary-green);
-  font-size: 34px;
-  margin-bottom: 10px;
-}
-
-.feature-hero p {
-  color: #555;
-  font-size: 16px;
-  max-width: 700px;
-}
-
-/* =====================
-   CONTENT GRID
-   ===================== */
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 25px;
-}
-
-/* =====================
-   CONTENT CARD
-   ===================== */
-.content-card {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.content-card::before {
-  content: '';
-  position: absolute;
-  right: -20px;
-  bottom: -20px;
-  width: 120px;
-  height: 150px;
-  background: url('gunungan.png.png') no-repeat center/contain;
-  opacity: 0.12;
-}
-
-.content-card h3 {
-  color: var(--primary-green);
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.content-card p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.content-card span {
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--accent-gold);
-}
-
-/* =====================
-   FOOTER
-   ===================== */
-footer {
-  background: linear-gradient(rgba(0,50,0,0.95), rgba(0,50,0,0.95)),
-              url('pattern-batik.png.jpg');
-  color: white;
-  text-align: center;
-  padding: 15px;
-  border-top: 4px solid var(--accent-gold);
-  font-size: 14px;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoNowledge — Econo Forum</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/ui.css">
 </head>
+<body class="eco-page page-forum">
 
-<body>
+  <header class="eco-header">
+    <a class="eco-back" href="./dashboard.html">⟵</a>
+    <img src="./assets/images/logo.png" alt="logo" class="eco-logo" />
+    <div style="width:40px"></div>
+  </header>
 
-<header>
-  <h2>📖 Econo Read</h2>
-  <button onclick="window.location.href='dashboard.html'"
-          style="background:#fbc02d;border:none;padding:8px 20px;
-          border-radius:20px;font-weight:bold;cursor:pointer;">
-    ← Dashboard
-  </button>
-</header>
-
-<div class="container">
-
-  <section class="feature-hero">
-    <h1>Literasi Ekonomi Kontekstual</h1>
-    <p>
-      Modul bacaan ekonomi yang disesuaikan dengan realitas Indonesia,
-      dari UMKM, pasar tradisional, hingga ekonomi digital berkelanjutan.
-    </p>
-  </section>
-
-  <section class="content-grid">
-
-    <div class="content-card">
-      <h3>Ekonomi Rumah Tangga</h3>
-      <p>
-        Strategi pengelolaan keuangan keluarga Indonesia
-        menghadapi inflasi dan kebutuhan jangka panjang.
-      </p>
-      <span>Durasi baca: 8 menit</span>
+  <main class="eco-content">
+    <!-- judul -->
+    <div class="eco-section">
+      <div class="content-card" style="display:flex;align-items:center;gap:12px;">
+        <div style="width:46px;height:46px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:22px;">💬</span>
+        </div>
+        <div>
+          <h3 style="margin:0;font-size:18px;color:var(--primary);">ECONO FORUM</h3>
+          <p style="margin:4px 0 0;color:var(--text-muted);font-size:12px;">Tempat diskusi UMKM, kebijakan, dan praktik ekonomi lokal</p>
+        </div>
+      </div>
     </div>
 
-    <div class="content-card">
-      <h3>UMKM & Digitalisasi</h3>
-      <p>
-        Studi kasus transformasi UMKM lokal melalui
-        QRIS, e-wallet, dan marketplace nasional.
-      </p>
-      <span>Durasi baca: 10 menit</span>
+    <!-- search -->
+    <div class="eco-section">
+      <div class="eco-search">
+        <input type="search" placeholder="Cari topik diskusi, contoh: inflasi UMKM..." />
+      </div>
     </div>
 
-    <div class="content-card">
-      <h3>Ekonomi Berbasis Budaya</h3>
-      <p>
-        Nilai ekonomi pada batik, tenun, dan produk
-        budaya sebagai aset ekonomi berkelanjutan.
-      </p>
-      <span>Durasi baca: 7 menit</span>
+    <!-- avatar row -->
+    <div class="eco-section" style="display:flex;gap:10px;align-items:center;">
+      <div class="eco-forum-avatar">EK</div>
+      <div class="eco-forum-avatar">UM</div>
+      <div class="eco-forum-avatar">IN</div>
+      <div class="eco-forum-avatar">SR</div>
     </div>
 
-  </section>
-</div>
+    <!-- list diskusi -->
+    <section class="eco-section eco-card-list">
+      <!-- item -->
+      <article class="eco-card forum-card">
+        <div class="eco-card-body">
+          <h3 style="margin:0 0 6px;">EKOFORUM INDONESIA — Dampak Inflasi</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:13px;">@EkonomiPakar memulai diskusi baru: Dampak inflasi pada harga bahan baku UMKM lokal.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <small class="eco-meta">32 komentar • 2 jam lalu</small>
+            <span class="eco-badge">Diskusi</span>
+          </div>
+        </div>
+      </article>
 
-<footer>
-  © 2025 ECONOWLEDGE — Literasi Ekonomi Berbasis Kearifan Lokal
-</footer>
+      <article class="eco-card forum-card">
+        <div class="eco-card-body">
+          <h3 style="margin:0 0 6px;">DIANDRA EKONOMI — Opini Harga Jual</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:13px;">@InvestorMuda menanggapi: Menurut saya penetapan margin harus mengikuti elastisitas permintaan lokal.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <small class="eco-meta">18 komentar • 12 jam lalu</small>
+            <span class="eco-badge">Opini</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="eco-card forum-card">
+        <div class="eco-card-body">
+          <h3 style="margin:0 0 6px;">WEBINAR: Prospek Ekonomi Digital 2026</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:13px;">Pengumuman: Pendaftaran webinar gratis — 10 Feb 2026. Hadir praktisi fintech & UMKM.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <small class="eco-meta">Pengumuman • 3 hari lalu</small>
+            <span class="eco-badge">Event</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <nav class="eco-bottom-nav">
+    <a href="./dashboard.html" class="active">🏠<br><small>Home</small></a>
+    <a href="./econo-forum.html">💬<br><small>Forum</small></a>
+    <a href="./econo-read.html">📚<br><small>Read</small></a>
+    <a href="./econo-listen.html">🎧<br><small>Listen</small></a>
+    <a href="./econo-vision.html">🎥<br><small>Vision</small></a>
+  </nav>
 
 </body>
 </html>
