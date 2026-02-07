@@ -1,53 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EcoNowledge — Econo Read</title>
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/ui.css" />
+  <meta charset="UTF-8">
+  <title>Econo Read | EcoNowledge</title>
+
+  <!-- WAJIB: PATH RELATIF DARI FOLDER FEATURES -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/ui.css">
 </head>
-<body class="eco-page page-read">
 
-  <header class="eco-header">
-    <a class="eco-back" href="./dashboard.html">←</a>
-    <img src="./images/logo.png" alt="logo" class="eco-logo"/>
-    <h1>Econo Read</h1>
-  </header>
+<body class="eco-section">
 
-  <main class="eco-content">
-    <div class="eco-search">
-      <input type="search" placeholder="Cari artikel atau buku..." />
-    </div>
+<header class="header-modern">
+  <div class="nav-top">
+    <a href="../dashboard.html">← Home</a>
+  </div>
 
-    <section class="eco-card-list">
-      <article class="eco-card read-card">
-        <img src="./images/book1.jpg" alt="buku 1">
-        <div class="eco-card-body">
-          <h3>Pemasaran Global: Wawasan Praktis</h3>
-          <p>Ringkasan praktik pemasaran internasional yang relevan bagi UMKM.</p>
-          <a class="eco-btn" href="#">Baca Ringkasan</a>
-        </div>
-      </article>
+  <div class="welcome-msg">
+    <h2>Econo Read</h2>
+    <p>Literasi ekonomi berbasis konteks Indonesia</p>
+  </div>
 
-      <article class="eco-card read-card">
-        <img src="./images/book2.jpg" alt="buku 2">
-        <div class="eco-card-body">
-          <h3>Manajemen UMKM di Era Digital</h3>
-          <p>Strategi digitalisasi usaha kecil untuk memperluas pasar dan efisiensi operasional.</p>
-          <a class="eco-btn" href="#">Baca Ringkasan</a>
-        </div>
-      </article>
-    </section>
-  </main>
+  <img src="../assets/images/wayang.png" class="wayang-hero" alt="">
+</header>
 
-  <nav class="eco-bottom-nav">
-    <a href="./dashboard.html">🏠</a>
-    <a href="./econo-forum.html">💬</a>
-    <a href="./econo-read.html">📚</a>
-    <a href="./econo-listen.html">🎧</a>
-    <a href="./econo-vision.html">🎥</a>
-  </nav>
+<section class="eco-card trending-panel-mod">
+  <div class="panel-title">Artikel Terbaru</div>
+
+  <div class="news-row eco-card">
+    <p>📘 Mengelola Keuangan Pribadi di Tengah Inflasi 2025</p>
+    <div class="eco-progress"><span></span></div>
+    <span class="eco-badge">Populer</span>
+  </div>
+
+  <div class="news-row eco-card">
+    <p>📘 UMKM & Digitalisasi Keuangan Berbasis Lokal</p>
+    <div class="eco-progress"><span style="width:45%"></span></div>
+    <span class="eco-badge">Baru</span>
+  </div>
+</section>
+
+<nav class="bottom-nav-mod eco-bottom-nav">
+  <a href="../dashboard.html" class="active">🏠</a>
+  <a href="#">📊</a>
+  <a href="#">👥</a>
+</nav>
 
 </body>
 </html>
