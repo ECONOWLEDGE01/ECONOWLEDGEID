@@ -4,55 +4,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EcoNowledge — Econo Listen</title>
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/ui.css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/ui.css">
 </head>
 <body class="eco-page page-listen">
 
   <header class="eco-header">
-    <a class="eco-back" href="./dashboard.html">←</a>
-    <img src="./images/logo.png" alt="logo" class="eco-logo"/>
-    <h1>Econo Listen</h1>
+    <a class="eco-back" href="./dashboard.html">⟵</a>
+    <img src="./assets/images/logo.png" alt="logo" class="eco-logo" />
+    <div style="width:40px"></div>
   </header>
 
   <main class="eco-content">
-    <div class="eco-search">
-      <input type="search" placeholder="Cari podcast atau audio..." />
+    <div class="eco-section">
+      <div class="content-card" style="display:flex;gap:12px;align-items:center;">
+        <div style="width:46px;height:46px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;">🎧</div>
+        <div>
+          <h3 style="margin:0;font-size:18px;color:var(--primary);">ECONO LISTEN</h3>
+          <p style="margin:4px 0 0;color:var(--text-muted);font-size:12px;">Podcast & audio learning: investasi, UMKM, keuangan personal.</p>
+        </div>
+      </div>
     </div>
 
-    <section class="eco-card-list">
+    <div class="eco-section">
+      <div class="eco-search">
+        <input type="search" placeholder="Cari podcast, contoh: investasi pemula..." />
+      </div>
+    </div>
+
+    <section class="eco-section eco-card-list">
       <article class="eco-card listen-card">
-        <img src="./images/pod1.jpg" alt="podcast 1">
         <div class="eco-card-body">
           <h3>Investasi untuk Pemula</h3>
-          <p>Episode 01 — Panduan dasar investasi & manajemen risiko.</p>
+          <p style="margin-top:6px;color:var(--text-muted)">Episode 01 — Panduan dasar investasi & manajemen risiko.</p>
           <audio class="eco-audio" controls preload="metadata">
             <source src="./media/sample-audio.mp3" type="audio/mpeg">
             Browser Anda tidak mendukung audio.
           </audio>
+          <small class="eco-meta">Durasi 18:23 • 05 Jan 2026</small>
         </div>
       </article>
 
       <article class="eco-card listen-card">
-        <img src="./images/pod2.jpg" alt="podcast 2">
         <div class="eco-card-body">
           <h3>UMKM & Transformasi Digital</h3>
-          <p>Diskusi praktik digitalisasi warung dan pasar tradisional.</p>
+          <p style="margin-top:6px;color:var(--text-muted)">Dialog praktisi: penerapan QRIS dan strategi pemasaran digital.</p>
           <audio class="eco-audio" controls preload="metadata">
             <source src="./media/sample2-audio.mp3" type="audio/mpeg">
             Browser Anda tidak mendukung audio.
           </audio>
+          <small class="eco-meta">Durasi 22:10 • 02 Jan 2026</small>
         </div>
       </article>
     </section>
   </main>
 
   <nav class="eco-bottom-nav">
-    <a href="./dashboard.html">🏠</a>
-    <a href="./econo-forum.html">💬</a>
-    <a href="./econo-read.html">📚</a>
-    <a href="./econo-listen.html">🎧</a>
-    <a href="./econo-vision.html">🎥</a>
+    <a href="./dashboard.html">🏠<br><small>Home</small></a>
+    <a href="./econo-forum.html">💬<br><small>Forum</small></a>
+    <a href="./econo-read.html">📚<br><small>Read</small></a>
+    <a href="./econo-listen.html" class="active">🎧<br><small>Listen</small></a>
+    <a href="./econo-vision.html">🎥<br><small>Vision</small></a>
   </nav>
 
 </body>
