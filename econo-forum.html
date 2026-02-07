@@ -4,63 +4,90 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EcoNowledge — Econo Forum</title>
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/ui.css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/ui.css">
 </head>
 <body class="eco-page page-forum">
 
   <header class="eco-header">
-    <a class="eco-back" href="./dashboard.html">←</a>
-    <img src="./images/logo.png" alt="logo" class="eco-logo"/>
-    <h1>Econo Forum</h1>
+    <a class="eco-back" href="./dashboard.html">⟵</a>
+    <img src="./assets/images/logo.png" alt="logo" class="eco-logo" />
+    <div style="width:40px"></div>
   </header>
 
   <main class="eco-content">
-    <div class="eco-search">
-      <input type="search" placeholder="Cari topik diskusi..." />
+    <!-- judul -->
+    <div class="eco-section">
+      <div class="content-card" style="display:flex;align-items:center;gap:12px;">
+        <div style="width:46px;height:46px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:22px;">💬</span>
+        </div>
+        <div>
+          <h3 style="margin:0;font-size:18px;color:var(--primary);">ECONO FORUM</h3>
+          <p style="margin:4px 0 0;color:var(--text-muted);font-size:12px;">Tempat diskusi UMKM, kebijakan, dan praktik ekonomi lokal</p>
+        </div>
+      </div>
     </div>
 
-    <section class="eco-section">
-      <div class="forum-avatars" style="display:flex;gap:10px;margin-bottom:10px;">
-        <div class="eco-forum-avatar">AP</div>
-        <div class="eco-forum-avatar">UM</div>
-        <div class="eco-forum-avatar">BP</div>
+    <!-- search -->
+    <div class="eco-section">
+      <div class="eco-search">
+        <input type="search" placeholder="Cari topik diskusi, contoh: inflasi UMKM..." />
       </div>
+    </div>
 
-      <div class="eco-card-list">
-        <article class="eco-card">
-          <div class="eco-card-body">
-            <h3>Dampak Inflasi terhadap Harga Bahan Baku UMKM</h3>
-            <p>Diskusi: strategi penetapan harga dan mitigasi biaya pada rantai pasok UMKM.</p>
-            <span class="eco-meta">oleh: @EkonomiPakar • 32 komentar • 2 jam lalu</span>
-          </div>
-        </article>
+    <!-- avatar row -->
+    <div class="eco-section" style="display:flex;gap:10px;align-items:center;">
+      <div class="eco-forum-avatar">EK</div>
+      <div class="eco-forum-avatar">UM</div>
+      <div class="eco-forum-avatar">IN</div>
+      <div class="eco-forum-avatar">SR</div>
+    </div>
 
-        <article class="eco-card">
-          <div class="eco-card-body">
-            <h3>Strategi Digitalisasi UMKM Jawa Timur</h3>
-            <p>Sharing pengalaman implementasi QRIS di pasar tradisional Pasuruan.</p>
-            <span class="eco-meta">oleh: @UMKMSejahtera • 18 komentar • 1 hari lalu</span>
+    <!-- list diskusi -->
+    <section class="eco-section eco-card-list">
+      <!-- item -->
+      <article class="eco-card forum-card">
+        <div class="eco-card-body">
+          <h3 style="margin:0 0 6px;">EKOFORUM INDONESIA — Dampak Inflasi</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:13px;">@EkonomiPakar memulai diskusi baru: Dampak inflasi pada harga bahan baku UMKM lokal.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <small class="eco-meta">32 komentar • 2 jam lalu</small>
+            <span class="eco-badge">Diskusi</span>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="eco-card">
-          <div class="eco-card-body">
-            <h3>Webinar: Prospek Ekonomi Digital 2026</h3>
-            <p>Informasi pendaftaran webinar, tanggal & pembicara.</p>
-            <span class="eco-meta">oleh: @SinergiForum • Pengumuman • 3 hari lalu</span>
+      <article class="eco-card forum-card">
+        <div class="eco-card-body">
+          <h3 style="margin:0 0 6px;">DIANDRA EKONOMI — Opini Harga Jual</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:13px;">@InvestorMuda menanggapi: Menurut saya penetapan margin harus mengikuti elastisitas permintaan lokal.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <small class="eco-meta">18 komentar • 12 jam lalu</small>
+            <span class="eco-badge">Opini</span>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
+
+      <article class="eco-card forum-card">
+        <div class="eco-card-body">
+          <h3 style="margin:0 0 6px;">WEBINAR: Prospek Ekonomi Digital 2026</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:13px;">Pengumuman: Pendaftaran webinar gratis — 10 Feb 2026. Hadir praktisi fintech & UMKM.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <small class="eco-meta">Pengumuman • 3 hari lalu</small>
+            <span class="eco-badge">Event</span>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 
   <nav class="eco-bottom-nav">
-    <a href="./dashboard.html">🏠</a>
-    <a href="./econo-forum.html">💬</a>
-    <a href="./econo-read.html">📚</a>
-    <a href="./econo-listen.html">🎧</a>
-    <a href="./econo-vision.html">🎥</a>
+    <a href="./dashboard.html" class="active">🏠<br><small>Home</small></a>
+    <a href="./econo-forum.html">💬<br><small>Forum</small></a>
+    <a href="./econo-read.html">📚<br><small>Read</small></a>
+    <a href="./econo-listen.html">🎧<br><small>Listen</small></a>
+    <a href="./econo-vision.html">🎥<br><small>Vision</small></a>
   </nav>
 
 </body>
