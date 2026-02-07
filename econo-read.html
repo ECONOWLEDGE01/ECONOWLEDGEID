@@ -1,50 +1,211 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Econo Read | EcoNowledge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Econo Read | ECONOWLEDGE</title>
 
-  <!-- WAJIB: PATH RELATIF DARI FOLDER FEATURES -->
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/ui.css">
+<style>
+/* =====================
+   AMBIL VARIABEL UTAMA
+   ===================== */
+:root {
+  --primary-green: #2e7d32;
+  --light-green: #e8f5e9;
+  --accent-gold: #fbc02d;
+  --text-dark: #1b5e20;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f1f8e9;
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95)),
+    url('15.png');
+  background-repeat: repeat;
+  background-size: 500px;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================
+   HEADER (SAMA DASHBOARD)
+   ===================== */
+header {
+  background: linear-gradient(rgba(0,50,0,0.9), rgba(0,50,0,0.8)),
+              url('pattern-batik.png.jpg');
+  background-size: 200px;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--accent-gold);
+}
+
+header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* =====================
+   CONTAINER
+   ===================== */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* =====================
+   FEATURE HERO
+   ===================== */
+.feature-hero {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-left: 10px solid var(--accent-gold);
+}
+
+.feature-hero h1 {
+  color: var(--primary-green);
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.feature-hero p {
+  color: #555;
+  font-size: 16px;
+  max-width: 700px;
+}
+
+/* =====================
+   CONTENT GRID
+   ===================== */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+}
+
+/* =====================
+   CONTENT CARD
+   ===================== */
+.content-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: '';
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 120px;
+  height: 150px;
+  background: url('gunungan.png.png') no-repeat center/contain;
+  opacity: 0.12;
+}
+
+.content-card h3 {
+  color: var(--primary-green);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.content-card span {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--accent-gold);
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+  background: linear-gradient(rgba(0,50,0,0.95), rgba(0,50,0,0.95)),
+              url('pattern-batik.png.jpg');
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-top: 4px solid var(--accent-gold);
+  font-size: 14px;
+}
+</style>
 </head>
 
-<body class="eco-section">
+<body>
 
-<header class="header-modern">
-  <div class="nav-top">
-    <a href="../dashboard.html">← Home</a>
-  </div>
-
-  <div class="welcome-msg">
-    <h2>Econo Read</h2>
-    <p>Literasi ekonomi berbasis konteks Indonesia</p>
-  </div>
-
-  <img src="../assets/images/wayang.png" class="wayang-hero" alt="">
+<header>
+  <h2>📖 Econo Read</h2>
+  <button onclick="window.location.href='dashboard.html'"
+          style="background:#fbc02d;border:none;padding:8px 20px;
+          border-radius:20px;font-weight:bold;cursor:pointer;">
+    ← Dashboard
+  </button>
 </header>
 
-<section class="eco-card trending-panel-mod">
-  <div class="panel-title">Artikel Terbaru</div>
+<div class="container">
 
-  <div class="news-row eco-card">
-    <p>📘 Mengelola Keuangan Pribadi di Tengah Inflasi 2025</p>
-    <div class="eco-progress"><span></span></div>
-    <span class="eco-badge">Populer</span>
-  </div>
+  <section class="feature-hero">
+    <h1>Literasi Ekonomi Kontekstual</h1>
+    <p>
+      Modul bacaan ekonomi yang disesuaikan dengan realitas Indonesia,
+      dari UMKM, pasar tradisional, hingga ekonomi digital berkelanjutan.
+    </p>
+  </section>
 
-  <div class="news-row eco-card">
-    <p>📘 UMKM & Digitalisasi Keuangan Berbasis Lokal</p>
-    <div class="eco-progress"><span style="width:45%"></span></div>
-    <span class="eco-badge">Baru</span>
-  </div>
-</section>
+  <section class="content-grid">
 
-<nav class="bottom-nav-mod eco-bottom-nav">
-  <a href="../dashboard.html" class="active">🏠</a>
-  <a href="#">📊</a>
-  <a href="#">👥</a>
-</nav>
+    <div class="content-card">
+      <h3>Ekonomi Rumah Tangga</h3>
+      <p>
+        Strategi pengelolaan keuangan keluarga Indonesia
+        menghadapi inflasi dan kebutuhan jangka panjang.
+      </p>
+      <span>Durasi baca: 8 menit</span>
+    </div>
+
+    <div class="content-card">
+      <h3>UMKM & Digitalisasi</h3>
+      <p>
+        Studi kasus transformasi UMKM lokal melalui
+        QRIS, e-wallet, dan marketplace nasional.
+      </p>
+      <span>Durasi baca: 10 menit</span>
+    </div>
+
+    <div class="content-card">
+      <h3>Ekonomi Berbasis Budaya</h3>
+      <p>
+        Nilai ekonomi pada batik, tenun, dan produk
+        budaya sebagai aset ekonomi berkelanjutan.
+      </p>
+      <span>Durasi baca: 7 menit</span>
+    </div>
+
+  </section>
+</div>
+
+<footer>
+  © 2025 ECONOWLEDGE — Literasi Ekonomi Berbasis Kearifan Lokal
+</footer>
 
 </body>
 </html>
