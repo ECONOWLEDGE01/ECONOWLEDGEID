@@ -4,58 +4,73 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EcoNowledge — Econo Insights</title>
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/ui.css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/ui.css">
 </head>
 <body class="eco-page page-insights">
 
   <header class="eco-header">
-    <a class="eco-back" href="./dashboard.html">←</a>
-    <img src="./images/logo.png" alt="logo" class="eco-logo"/>
-    <h1>Econo Insights</h1>
+    <a class="eco-back" href="./dashboard.html">⟵</a>
+    <img src="./assets/images/logo.png" alt="logo" class="eco-logo" />
+    <div style="width:40px"></div>
   </header>
 
   <main class="eco-content">
-    <div class="eco-search">
-      <input type="search" placeholder="Cari insight, mis. IHSG, inflasi..." />
+    <div class="eco-section">
+      <div class="content-card" style="display:flex;align-items:center;gap:12px;">
+        <div style="width:42px;height:42px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:20px;">💡</span>
+        </div>
+        <div>
+          <h3 style="margin:0;font-size:18px;color:var(--primary);">ECONO INSIGHTS</h3>
+          <p style="margin:4px 0 0;color:var(--text-muted);font-size:12px;">Agregator berita ekonomi & ringkasan pasar (dummy real-time feed)</p>
+        </div>
+      </div>
     </div>
 
+    <!-- search -->
+    <div class="eco-section">
+      <div class="eco-search">
+        <input type="search" placeholder="Cari insight: IHSG, inflasi, saham..." />
+      </div>
+    </div>
+
+    <!-- trending cards -->
     <section class="eco-section eco-card-list">
       <article class="eco-card">
-        <img src="./images/insight1.jpg" alt="IHSG">
         <div class="eco-card-body">
-          <h3>IHSG Awal 2026 Menguat, Perbankan Dominan</h3>
-          <p>Penguatan IHSG 1.8% dipicu kinerja sektor perbankan besar; investor memantau kebijakan moneter selanjutnya.</p>
-          <span class="eco-meta">Pasar Modal · 12 Jan 2026</span>
+          <span class="eco-badge">TRENDING</span>
+          <h3>IHSG Awal Maret Menguat — Perbankan Dominan</h3>
+          <p style="margin-top:6px;color:var(--text-muted)">Laporan: BBRI, BBCA, BMRI mencatat peningkatan likuiditas; investor domestik menunjukkan minat beli.</p>
+          <div class="eco-progress"><span style="width:72%"></span></div>
+          <small class="eco-meta">12 Jan 2026 • Market</small>
         </div>
       </article>
 
       <article class="eco-card">
-        <img src="./images/insight2.jpg" alt="BI Policy">
         <div class="eco-card-body">
-          <h3>BI Pertahankan Suku Bunga — Implikasi UMKM</h3>
-          <p>Kebijakan ini memberi ruang pembiayaan lebih stabil bagi UMKM, namun likuiditas beberapa sektor tetap perlu diantisipasi.</p>
-          <span class="eco-meta">Kebijakan · 09 Jan 2026</span>
+          <h3>IHSG Rebound: Sektor Teknologi dan Konsumer</h3>
+          <p style="margin-top:6px;color:var(--text-muted)">Analisis singkat: Sentimen global dan data inflasi yang stabil memicu rotasi sektor.</p>
+          <small class="eco-meta">09 Jan 2026 • Analysis</small>
         </div>
       </article>
 
       <article class="eco-card">
-        <img src="./images/insight3.jpg" alt="Digital Economy">
         <div class="eco-card-body">
-          <h3>Ekonomi Digital RI Diproyeksi Tumbuh Pesat</h3>
-          <p>Fintech, e-commerce, dan adopsi AI mendorong percepatan digitalisasi UMKM di berbagai daerah.</p>
-          <span class="eco-meta">Ekonomi Digital · 05 Jan 2026</span>
+          <h3>Bank Indonesia & Dampaknya pada UMKM</h3>
+          <p style="margin-top:6px;color:var(--text-muted)">Kebijakan moneter terbaru berdampak pada biaya kredit mikro; rekomendasi kebijakan jangka pendek.</p>
+          <small class="eco-meta">05 Jan 2026 • Policy</small>
         </div>
       </article>
     </section>
   </main>
 
   <nav class="eco-bottom-nav">
-    <a href="./dashboard.html">🏠</a>
-    <a href="./econo-forum.html">💬</a>
-    <a href="./econo-read.html">📚</a>
-    <a href="./econo-listen.html">🎧</a>
-    <a href="./econo-vision.html">🎥</a>
+    <a href="./dashboard.html">🏠<br><small>Home</small></a>
+    <a href="./econo-forum.html">💬<br><small>Forum</small></a>
+    <a href="./econo-read.html">📚<br><small>Read</small></a>
+    <a href="./econo-listen.html">🎧<br><small>Listen</small></a>
+    <a href="./econo-vision.html" class="active">🎥<br><small>Vision</small></a>
   </nav>
 
 </body>
